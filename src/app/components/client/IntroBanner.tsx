@@ -43,11 +43,27 @@ export default function IntroBanner() {
     ];
 
     const socialLinks = [
-        { icon: faLinkedin, href: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/" },
-        { icon: faMedium, href: "https://medium.com/@tirthyakamaldasgupta12" },
-        { icon: faHashnode, href: "https://tirthya-kamal-dasgupta.hashnode.dev/" },
-        { icon: faGithub, href: "https://github.com/tirthyakamaldasgupta" },
-        { icon: faYoutube, href: "https://www.youtube.com/channel/UCnESi7g2P7lhhJ1Jy36SuqA" },
+        {
+            icon: faLinkedin,
+            href: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/",
+            color: "#0a66c2"
+        },
+        {
+            icon: faMedium,
+            href: "https://medium.com/@tirthyakamaldasgupta12"
+        },
+        {
+            icon: faHashnode,
+            href: "https://tirthya-kamal-dasgupta.hashnode.dev/",
+            color: "#2962FF"
+        },
+        {
+            icon: faGithub, href: "https://github.com/tirthyakamaldasgupta"},
+        {
+            icon: faYoutube,
+            href: "https://www.youtube.com/channel/UCnESi7g2P7lhhJ1Jy36SuqA",
+            color: "#ff0000"
+        },
     ];
 
     return (
@@ -81,7 +97,7 @@ export default function IntroBanner() {
                 <HStack spacing={3} wrap="wrap">
                     {socialLinks.map((link, index) => (
                         <Link key={index} href={link.href} isExternal>
-                            <FontAwesomeIcon icon={link.icon} size="2xl" />
+                            <FontAwesomeIcon icon={link.icon} size="2xl" color={link.color} />
                         </Link>
                     ))}
                 </HStack>
