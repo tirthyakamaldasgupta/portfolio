@@ -46,7 +46,7 @@ export default function IntroBanner() {
         {
             icon: faLinkedin,
             href: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/",
-            color: "#0a66c2"
+            color: "#0077B5"
         },
         {
             icon: faMedium,
@@ -58,7 +58,9 @@ export default function IntroBanner() {
             color: "#2962FF"
         },
         {
-            icon: faGithub, href: "https://github.com/tirthyakamaldasgupta"},
+            icon: faGithub,
+            href: "https://github.com/tirthyakamaldasgupta"
+        },
         {
             icon: faYoutube,
             href: "https://www.youtube.com/channel/UCnESi7g2P7lhhJ1Jy36SuqA",
@@ -69,30 +71,34 @@ export default function IntroBanner() {
     return (
         <SimpleGrid columns={[1, 2]} spacing={4} padding={4}>
             <Box>
-                <Heading size="3xl" color={"#03C988"}>
-                    Hello. I'm,
-                </Heading>
-                <Heading size="2xl" fontWeight={"semibold"}>
-                    Tirthya Kamal Dasgupta
-                </Heading>
-                <Heading size="xl" fontWeight={"normal"}>
-                    Automation Engineer | Full Stack Developer
-                </Heading>
+                <Box marginY={5}>
+                    <Heading size="3xl" color={"#03C988"} marginBottom={5}>
+                        Hello. I'm,
+                    </Heading>
+                    <Heading size="2xl" fontWeight={"semibold"} marginBottom={3}>
+                        Tirthya Kamal Dasgupta
+                    </Heading>
+                    <Heading size="xl" fontWeight={"normal"}>
+                        Automation Engineer | Full Stack Developer
+                    </Heading>
+                </Box>
 
-                {contactInfo.map((info, index) => (
-                    <HStack key={index}>
-                        <Box>
-                            <Image src={info.imageUrl} alt={info.imageAlt} height={12} />
-                        </Box>
-                        <Box>
-                            {info.type === "address" ? (
-                                <Text>{info.value}</Text>
-                            ) : (
-                                <Link href={info.href}>{info.value}</Link>
-                            )}
-                        </Box>
-                    </HStack>
-                ))}
+                <Box marginY={5}>
+                    {contactInfo.map((info, index) => (
+                        <HStack key={index} marginY={3}>
+                            <Box>
+                                <Image src={info.imageUrl} alt={info.imageAlt} height={12} />
+                            </Box>
+                            <Box>
+                                {info.type === "address" ? (
+                                    <Text>{info.value}</Text>
+                                ) : (
+                                    <Link href={info.href}>{info.value}</Link>
+                                )}
+                            </Box>
+                        </HStack>
+                    ))}
+                </Box>
 
                 <HStack spacing={3} wrap="wrap">
                     {socialLinks.map((link, index) => (
