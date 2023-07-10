@@ -50,7 +50,8 @@ export default function IntroBanner() {
         },
         {
             icon: faMedium,
-            href: "https://medium.com/@tirthyakamaldasgupta12"
+            href: "https://medium.com/@tirthyakamaldasgupta12",
+            color: "#ffffff"
         },
         {
             icon: faHashnode,
@@ -59,7 +60,8 @@ export default function IntroBanner() {
         },
         {
             icon: faGithub,
-            href: "https://github.com/tirthyakamaldasgupta"
+            href: "https://github.com/tirthyakamaldasgupta",
+            color: "#ffffff"
         },
         {
             icon: faYoutube,
