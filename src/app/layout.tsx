@@ -1,29 +1,29 @@
 import "./globals.css";
-import { Roboto } from "next/font/google";
-import { Providers } from "./providers";
+import {Roboto} from "next/font/google";
+import {Providers} from "./providers";
 
 const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  subsets: ["latin"],
+    weight: ["100", "300", "400", "500", "700", "900"],
+    subsets: ["latin"],
 });
 
 export const metadata = {
-  title: "Tirthya Kamal Dasgupta",
-  description: "Portfolio",
+    title: "Tirthya Kamal Dasgupta",
+    description: "Portfolio",
 };
 
 export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
+                                       children,
+                                   }: {
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className={roboto.className}>
+    return (
+        <html lang="en">
+        <body className={roboto.className}>
         <Providers>
-          {children}
+            {children}
         </Providers>
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 };

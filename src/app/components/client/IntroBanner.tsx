@@ -1,7 +1,6 @@
-import { Box, HStack, Heading, Link, SimpleGrid, Text } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faHashnode, faLinkedin, faMedium, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {Box, Heading, HStack, Image, Link, SimpleGrid, Text} from "@chakra-ui/react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithub, faHashnode, faLinkedin, faMedium, faYoutube} from "@fortawesome/free-brands-svg-icons";
 
 
 export default function IntroBanner() {
@@ -89,7 +88,7 @@ export default function IntroBanner() {
                     {contactInfo.map((info, index) => (
                         <HStack key={index} marginY={3}>
                             <Box>
-                                <Image src={info.imageUrl} alt={info.imageAlt} height={12} />
+                                <Image src={info.imageUrl} alt={info.imageAlt} height={12}/>
                             </Box>
                             <Box>
                                 {info.type === "address" ? (
@@ -105,13 +104,14 @@ export default function IntroBanner() {
                 <HStack spacing={3} wrap="wrap">
                     {socialLinks.map((link, index) => (
                         <Link key={index} href={link.href} isExternal>
-                            <FontAwesomeIcon icon={link.icon} size="2xl" color={link.color} />
+                            <FontAwesomeIcon icon={link.icon} size="2xl" color={link.color}/>
                         </Link>
                     ))}
                 </HStack>
             </Box>
             <Box>
-                <Image src="tirthya-kamal-dasgupta.png" alt="Tirthya Kamal Dasgupta" width={500} height={"auto"} borderRadius={20} />
+                <Image src="tirthya-kamal-dasgupta.png" alt="Tirthya Kamal Dasgupta" width={500} height={"auto"}
+                       borderRadius={20}/>
             </Box>
         </SimpleGrid>
     )
