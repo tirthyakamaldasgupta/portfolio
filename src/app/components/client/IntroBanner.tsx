@@ -111,7 +111,7 @@ export default function IntroBanner() {
                 </HStack>
             </Box>
             <Box>
-                <Image src="tirthya-kamal-dasgupta.png" alt="Tirthya Kamal Dasgupta" height={500} width={500} />
+                <Image src="tirthya-kamal-dasgupta.png" alt="Tirthya Kamal Dasgupta" width={500} height={"auto"} borderRadius={20} />
             </Box>
         </SimpleGrid>
     )
