@@ -47,11 +47,6 @@ export default function ProfileIntroduction() {
                     as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>Canva</Text> to design
                     graphics for my dad.
                 </Text>
-                <br/>
-                <Button>
-                    <Text>See what I do at workplace</Text>
-                    <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
-                </Button>
             </Box>
         </SimpleGrid>
     )
