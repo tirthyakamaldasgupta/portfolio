@@ -1,117 +1,57 @@
-import {Box, Heading, HStack, Image, Link, SimpleGrid, Text} from "@chakra-ui/react";
+import {Box, Button, Heading, SimpleGrid, Text} from "@chakra-ui/react";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faGithub, faHashnode, faLinkedin, faMedium, faYoutube} from "@fortawesome/free-brands-svg-icons";
-
 
 export default function IntroBanner() {
-    const contactInfo = [
-        {
-            type: "email",
-            imageAlt: "Primary Email",
-            imageUrl: "mail.png",
-            value: "dasguptatirthyakamal@gmail.com",
-            href: "mailto:dasguptatirthyakamal@gmail.com",
-        },
-        {
-            type: "email",
-            imageAlt: "Secondary Email",
-            imageUrl: "mail.png",
-            value: "dasguptatirthyakamal@outlook.com",
-            href: "mailto:dasguptatirthyakamal@outlook.com",
-        },
-        {
-            type: "phone",
-            imageAlt: "Primary Phone",
-            imageUrl: "phone.png",
-            value: "+918240693916",
-            href: "tel:+918240693916",
-        },
-        {
-            type: "phone",
-            imageAlt: "Secondary Phone",
-            imageUrl: "phone.png",
-            value: "+918017352824",
-            href: "tel:+918017352824",
-        },
-        {
-            type: "address",
-            imageAlt: "Address",
-            imageUrl: "map-marker.png",
-            value: "B-8, Aurobindo Park, Kolkata, West Bengal 700093, India",
-        },
-    ];
-
-    const socialLinks = [
-        {
-            icon: faLinkedin,
-            href: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/",
-            color: "#0077B5"
-        },
-        {
-            icon: faMedium,
-            href: "https://medium.com/@tirthyakamaldasgupta12",
-            color: "#ffffff"
-        },
-        {
-            icon: faHashnode,
-            href: "https://tirthya-kamal-dasgupta.hashnode.dev/",
-            color: "#2962FF"
-        },
-        {
-            icon: faGithub,
-            href: "https://github.com/tirthyakamaldasgupta",
-            color: "#ffffff"
-        },
-        {
-            icon: faYoutube,
-            href: "https://www.youtube.com/channel/UCnESi7g2P7lhhJ1Jy36SuqA",
-            color: "#ff0000"
-        },
-    ];
-
     return (
-        <SimpleGrid columns={[1, 2]} spacing={4} padding={4}>
+        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
             <Box>
-                <Box marginY={5}>
-                    <Heading size="3xl" color={"#03C988"} marginBottom={5}>
-                        Hello. I'm,
-                    </Heading>
-                    <Heading size="2xl" fontWeight={"semibold"} marginBottom={3}>
-                        Tirthya Kamal Dasgupta
-                    </Heading>
-                    <Heading size="xl" fontWeight={"normal"}>
-                        Automation Engineer | Full Stack Developer
-                    </Heading>
-                </Box>
-
-                <Box marginY={5}>
-                    {contactInfo.map((info, index) => (
-                        <HStack key={index} marginY={3}>
-                            <Box>
-                                <Image src={info.imageUrl} alt={info.imageAlt} height={12}/>
-                            </Box>
-                            <Box>
-                                {info.type === "address" ? (
-                                    <Text>{info.value}</Text>
-                                ) : (
-                                    <Link href={info.href}>{info.value}</Link>
-                                )}
-                            </Box>
-                        </HStack>
-                    ))}
-                </Box>
-
-                <HStack spacing={3} wrap="wrap">
-                    {socialLinks.map((link, index) => (
-                        <Link key={index} href={link.href} isExternal>
-                            <FontAwesomeIcon icon={link.icon} size="2xl" color={link.color}/>
-                        </Link>
-                    ))}
-                </HStack>
+                <Heading size="3xl" color={"#03C988"} marginBottom={5}>
+                    Hello. I&apos;m,
+                </Heading>
+                <Heading size="2xl" fontWeight={"semibold"} marginBottom={3} color={"#ffffff"}>
+                    Tirthya Kamal Dasgupta
+                </Heading>
+                <Heading size="lg" fontWeight={"normal"}>
+                    <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>Automation
+                        Engineer</Text> at <Text as={"span"} display={"inline"} fontWeight={"semibold"}
+                                                 color={"#ffffff"}>BAAR Technologies</Text>
+                </Heading>
             </Box>
             <Box>
-                <Image src="tirthya-kamal-dasgupta.png" alt="Tirthya Kamal Dasgupta" width={500} height={"auto"}
-                       borderRadius={20}/>
+                <Text>
+                    Back in 2014, I got super curious about flashing custom roms on my Android mobile. Although I never
+                    got around to building one, that&apos;s when I realized my true passion lies in developing applications.
+                    <br/>
+                    <br/>
+                    I now work as an <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>Automation
+                    Engineer</Text> at <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>BAAR
+                    Technologies</Text>, where I dive into the exciting world of <Text as={"span"} display={"inline"}
+                                                                                       fontWeight={"semibold"}
+                                                                                       color={"#ffffff"}>Robotic Process
+                    Automation</Text> and its incredible capabilities. My main responsibility revolves around developing
+                    and enhancing <Text as={"span"} display={"inline"} fontWeight={"semibold"}
+                                        color={"#ffffff"}>BAARIGA</Text>, our in-house digital identity management
+                    platform.
+                    <br/>
+                    <br/>
+                    When I&apos;m not busy with that, I love creating <Text as={"span"} display={"inline"}
+                                                                       fontWeight={"semibold"} color={"#ffffff"}>Web
+                    Applications</Text> and incorporating all sorts of cutting-edge technologies that adhere to industry
+                    standards.
+                    <br/>
+                    <br/>
+                    During my free time, you&apos;ll probably catch me jamming with fellow musicians, experimenting with
+                    random mixes in <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>FL
+                    Studio</Text>, writing blogs, making videos on my YouTube channel, or getting creative with <Text
+                    as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>Canva</Text> to design
+                    graphics for my dad.
+                </Text>
+                <br/>
+                <Button>
+                    <Text>See what I do at workplace</Text>
+                    <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
+                </Button>
             </Box>
         </SimpleGrid>
     )

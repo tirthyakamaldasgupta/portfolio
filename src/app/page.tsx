@@ -1,25 +1,14 @@
 "use client";
 
 import IntroBanner from "./components/client/IntroBanner";
-import {Box, Flex} from "@chakra-ui/react";
-import SkillsBanner from "./components/client/SkillsBanner";
+import { Box, Flex } from "@chakra-ui/react";
 
 export default function Home() {
-    return (
-        <>
-            {/* <Flex align="center" justify="center" height="100vh"></Flex> */}
-            <Flex align="center" justify="center">
-                <Box width="80%">
-                    <IntroBanner/>
-                </Box>
-            </Flex>
-            <br/>
-            <br/>
-            <Flex align="center" justify="center">
-                <Box width="80%">
-                    <SkillsBanner/>
-                </Box>
-            </Flex>
-        </>
-    )
+  return (
+    <Flex align="center" height="85vh" justify="center" marginY={20}>
+      <Box width="60%">
+        <IntroBanner />
+      </Box>
+    </Flex>
+  )
 }
