@@ -1,6 +1,4 @@
-import {Box, Button, Heading, SimpleGrid, Text} from "@chakra-ui/react";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Box, Heading, SimpleGrid, Text} from "@chakra-ui/react";
 
 export default function ProfileIntroduction() {
     return (

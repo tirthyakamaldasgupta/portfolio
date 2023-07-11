@@ -1,7 +1,7 @@
-import { Box, Button, Heading, Link, SimpleGrid, Tag, TagCloseButton, TagLabel, Text } from "@chakra-ui/react";
-import { faArrowRight, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode, Key } from "react";
+import {Box, Button, Heading, Link, SimpleGrid, Tag, TagCloseButton, TagLabel, Text} from "@chakra-ui/react";
+import {faArrowRight, faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal} from "react";
 
 export default function ProfessionalExperience() {
     const professionalExperiences = [
@@ -43,19 +43,31 @@ export default function ProfessionalExperience() {
                 </Box>
             </SimpleGrid>
 
-            {professionalExperiences.map((professionalExperience: { startingDate: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; endingDate: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; jobTitle: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; companyLink: string | undefined; companyName: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; jobDescription: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; skills: (string | number | boolean | ReactPortal | PromiseLikeOfReactNode | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined)[]; }, professionalExperienceIndex: Key | null | undefined) => (
+            {professionalExperiences.map((professionalExperience: {
+                startingDate: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+                endingDate: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+                jobTitle: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+                companyLink: string | undefined;
+                companyName: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+                jobDescription: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined;
+                skills: (string | number | boolean | ReactPortal | PromiseLikeOfReactNode | ReactElement | Iterable<ReactNode> | null | undefined)[];
+            }, professionalExperienceIndex: Key | null | undefined) => (
                 <SimpleGrid key={professionalExperienceIndex} columns={[1, 2]} spacing={1} padding={4}>
                     <Box>
-                        <Heading size={"sm"}>{professionalExperience.startingDate} - {professionalExperience.endingDate}</Heading>
+                        <Heading
+                            size={"sm"}>{professionalExperience.startingDate} - {professionalExperience.endingDate}</Heading>
                     </Box>
                     <Box>
-                        <Heading size={"sm"} color={"#ffffff"}>{professionalExperience.jobTitle} | <Link href={professionalExperience.companyLink}>{professionalExperience.companyName}<FontAwesomeIcon icon={faUpRightFromSquare} style={{ marginLeft: "5px" }} /></Link></Heading>
+                        <Heading size={"sm"} color={"#ffffff"}>{professionalExperience.jobTitle} | <Link
+                            href={professionalExperience.companyLink}>{professionalExperience.companyName}<FontAwesomeIcon
+                            icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link></Heading>
                         <Text marginY={5}>{professionalExperience.jobDescription}</Text>
 
-                        {professionalExperience.skills.map((skill: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined, skillIndex: Key | null | undefined) => (
-                            <Tag key={skillIndex} variant={"solid"} size={"md"} isTruncated={false} borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
+                        {professionalExperience.skills.map((skill: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined, skillIndex: Key | null | undefined) => (
+                            <Tag key={skillIndex} variant={"solid"} size={"md"} isTruncated={false}
+                                 borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
                                 <TagLabel>{skill}</TagLabel>
-                                <TagCloseButton />
+                                <TagCloseButton/>
                             </Tag>
                         ))}
                     </Box>
@@ -67,7 +79,7 @@ export default function ProfessionalExperience() {
                 <Box>
                     <Button onClick={downloadResume}>
                         <Text>Download resume</Text>
-                        <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
+                        <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
                     </Button>
                 </Box>
             </SimpleGrid>
