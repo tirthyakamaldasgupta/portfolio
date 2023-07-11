@@ -2,7 +2,7 @@ import {Box, Button, Heading, SimpleGrid, Text} from "@chakra-ui/react";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export default function IntroBanner() {
+export default function ProfileIntroduction() {
     return (
         <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
             <Box>
