@@ -33,7 +33,7 @@ export default function Projects() {
                 for subsequent processing.
                 <br/>
                 <br/>
-                The application harnesses the immense capabilities of IDfy's PAN OCR API, a cutting-edge solution that
+                The application harnesses the immense capabilities of IDfy&apos;s PAN OCR API, a cutting-edge solution that
                 leverages advanced optical character recognition technology specifically tailored for PAN Cards. By
                 integrating this API into the workflow, the application retrieves comprehensive and accurate metadata
                 from the PAN Card images, extracting key details such as name, date of birth, PAN number, and more.
