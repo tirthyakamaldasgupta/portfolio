@@ -1,5 +1,6 @@
 "use client";
 
+import AcademicBackground from "./components/client/AcademicBackground";
 import ProfessionalExperience from "./components/client/ProfessionalExperience";
 import ProfileIntroduction from "./components/client/ProfileIntroduction";
 import {Box, Flex} from "@chakra-ui/react";
@@ -9,12 +10,17 @@ export default function Home() {
         <>
             <Flex align="center" justify="center" marginY={10}>
                 <Box width="60%">
-                    <ProfileIntroduction/>
+                    <ProfileIntroduction />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
                 <Box width="60%">
-                    <ProfessionalExperience/>
+                    <ProfessionalExperience />
+                </Box>
+            </Flex>
+            <Flex align="center" justify="center" marginY={10}>
+                <Box width="60%">
+                    <AcademicBackground />
                 </Box>
             </Flex>
         </>
