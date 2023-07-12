@@ -1,7 +1,7 @@
-import { Box, Button, Heading, Link, SimpleGrid, Tag, TagCloseButton, TagLabel, Text } from "@chakra-ui/react";
-import { faHashnode, faMedium } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {Box, Button, Heading, Link, SimpleGrid, Text} from "@chakra-ui/react";
+import {faHashnode, faMedium} from "@fortawesome/free-brands-svg-icons";
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Blogs() {
     const blogs = [{
@@ -81,11 +81,17 @@ export default function Blogs() {
                     {blogs.map((blog, index) => (
                         <Box key={index} marginBottom={8}>
                             <Heading size="sm" color="#ffffff" marginBottom={2}>{blog.blogTitle}</Heading>
-                            <Heading size="sm" marginBottom={2} fontWeight="normal">{blog.publishDate} | {blog.readTime}</Heading>
+                            <Heading size="sm" marginBottom={2}
+                                     fontWeight="normal">{blog.publishDate} | {blog.readTime}</Heading>
                             <Text marginY={5}>{blog.blogDescription}</Text>
                             <Heading size="sm" marginBottom={2}>Read more on</Heading>
                             {blog.platforms.map((platform, platformIndex) => (
-                                <Button key={platformIndex} as={Link} href={platform.link} target={"_blank"} rel={"noopener noreferrer"} backgroundColor={"transparent"} textDecoration={"none"} _hover={{ textDecoration: "none" }} color={"#ffffff"} rightIcon={<FontAwesomeIcon icon={faArrowRight} />} leftIcon={<FontAwesomeIcon icon={platform.platformIcon} color={platform.platformIconColor} />} />
+                                <Button key={platformIndex} as={Link} href={platform.link} target={"_blank"}
+                                        rel={"noopener noreferrer"} backgroundColor={"transparent"}
+                                        textDecoration={"none"} _hover={{textDecoration: "none"}} color={"#ffffff"}
+                                        rightIcon={<FontAwesomeIcon icon={faArrowRight}/>}
+                                        leftIcon={<FontAwesomeIcon icon={platform.platformIcon}
+                                                                   color={platform.platformIconColor}/>}/>
                             ))}
                         </Box>
                     ))}
