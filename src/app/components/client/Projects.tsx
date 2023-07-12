@@ -45,7 +45,7 @@ export default function Projects() {
                 manual data entry errors. Additionally, it archives the processed images into a separate designated
                 folder.
             </>),
-        skills: ["python-docx", "Document Generation", "Python", "Microsoft Word", "BAAR"],
+        skills: ["Serverless Computing", "Docker", "Python", "REST APIs", "MySQL"],
         buttonText: "Visit GitHub repository",
         buttonLink: "https://github.com/tirthyakamaldasgupta/pan-card-utility"
     }];
@@ -78,7 +78,6 @@ export default function Projects() {
                                 </Tag>))}
                         </Box>))}
                 </Box>
-
             </SimpleGrid>
 
             <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
@@ -104,7 +103,6 @@ export default function Projects() {
                             </Box>
                         </Box>))}
                 </Box>
-
             </SimpleGrid>
         </>)
 }
