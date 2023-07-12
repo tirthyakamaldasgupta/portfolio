@@ -4,26 +4,23 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal} from "react";
 
 export default function ProfessionalExperience() {
-    const professionalExperiences = [
-        {
-            startingDate: "March 2022",
-            endingDate: "Present",
-            jobTitle: "Sr. Automation Engineer",
-            companyName: "BAAR Technologies",
-            companyLink: "https://www.baar.ai",
-            jobDescription: "I am accountable for the integration of BAAR (an in-house Business Workflow Automation platform) with BAARIGA (an in-house Identity Management Platform).",
-            skills: ["Workday Integration", "DocuSign", "Python", "RPA", "SSMS", "REST APIs", "Jira Service Management", "Playwright", "SAP Successfactors", "BAARIGA", "Zoho People", "BAAR", "Django", "Django REST Framework", "Git", "Bitbucket", "Microsoft SQL Server"]
-        },
-        {
-            startingDate: "April 2021",
-            endingDate: "March 2022",
-            jobTitle: "Automation Engineer",
-            companyName: "BAAR Technologies",
-            companyLink: "https://www.baar.ai",
-            jobDescription: "I have had the opportunity to work with several prominent clients in the manufacturing industry, and a global consulting firm. I have experience in designing and implementing process automation workflows to monitor data, automate document generation, and simplify communication with vendors. Additionally, I have created a user-friendly web application client for a firm.",
-            skills: ["Python", "RPA", "Process Scheduler", "OAuth", "Microsoft Word", "REST APIs", "BAAR", "Selenium", "Django", "Robot Framework", "MySQL", "HTML5", "jQuery", "Django REST Framework", "Git", "Bitbucket", "CSS"]
-        }
-    ];
+    const professionalExperiences = [{
+        startingDate: "March 2022",
+        endingDate: "Present",
+        jobTitle: "Sr. Automation Engineer",
+        companyName: "BAAR Technologies",
+        companyLink: "https://www.baar.ai",
+        jobDescription: "I am accountable for the integration of BAAR (an in-house Business Workflow Automation platform) with BAARIGA (an in-house Identity Management Platform).",
+        skills: ["Workday Integration", "DocuSign", "Python", "RPA", "SSMS", "REST APIs", "Jira Service Management", "Playwright", "SAP Successfactors", "BAARIGA", "Zoho People", "BAAR", "Django", "Django REST Framework", "Git", "Bitbucket", "Microsoft SQL Server"]
+    }, {
+        startingDate: "April 2021",
+        endingDate: "March 2022",
+        jobTitle: "Automation Engineer",
+        companyName: "BAAR Technologies",
+        companyLink: "https://www.baar.ai",
+        jobDescription: "I have had the opportunity to work with several prominent clients in the manufacturing industry, and a global consulting firm. I have experience in designing and implementing process automation workflows to monitor data, automate document generation, and simplify communication with vendors. Additionally, I have created a user-friendly web application client for a firm.",
+        skills: ["Python", "RPA", "Process Scheduler", "OAuth", "Microsoft Word", "REST APIs", "BAAR", "Selenium", "Django", "Robot Framework", "MySQL", "HTML5", "jQuery", "Django REST Framework", "Git", "Bitbucket", "CSS"]
+    }];
 
     const downloadResume = () => {
         const link = document.createElement("a");
@@ -35,8 +32,7 @@ export default function ProfessionalExperience() {
         link.click();
     };
 
-    return (
-        <>
+    return (<>
             <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
                 <Box>
                     <Heading size={"md"} color={"#ffffff"}>PROFESSIONAL EXPERIENCE</Heading>
@@ -57,8 +53,11 @@ export default function ProfessionalExperience() {
                         <Heading
                             size={"sm"}>{professionalExperience.startingDate} - {professionalExperience.endingDate}</Heading>
                     </Box>
+
                     <Box>
-                        <Heading size={"sm"} color={"#ffffff"}>{professionalExperience.jobTitle} | <Link
+                        <Heading size={"sm"} color={"#ffffff"}
+                                 marginBottom={2}>{professionalExperience.jobTitle}</Heading>
+                        <Heading size={"sm"}><Link
                             href={professionalExperience.companyLink}>{professionalExperience.companyName}<FontAwesomeIcon
                             icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link></Heading>
                         <Text marginY={5}>{professionalExperience.jobDescription}</Text>
@@ -68,11 +67,9 @@ export default function ProfessionalExperience() {
                                  borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
                                 <TagLabel>{skill}</TagLabel>
                                 <TagCloseButton/>
-                            </Tag>
-                        ))}
+                            </Tag>))}
                     </Box>
-                </SimpleGrid>
-            ))}
+                </SimpleGrid>))}
 
             <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
                 <Box></Box>
@@ -83,6 +80,5 @@ export default function ProfessionalExperience() {
                     </Button>
                 </Box>
             </SimpleGrid>
-        </>
-    )
+        </>)
 }
