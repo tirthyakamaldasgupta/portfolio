@@ -10,22 +10,22 @@ export default function Home() {
     return (
         <>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width="60%">
+                <Box width={{ base: "95%", lg: "60%" }}>
                     <ProfileIntroduction />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width="60%">
+                <Box width={{ base: "95%", lg: "60%" }}>
                     <ProfessionalExperience />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width="60%">
+                <Box width={{ base: "95%", lg: "60%" }}>
                     <Projects />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width="60%">
+                <Box width={{ base: "95%", lg: "60%" }}>
                     <AcademicBackground />
                 </Box>
             </Flex>
