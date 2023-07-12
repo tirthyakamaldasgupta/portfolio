@@ -5,8 +5,8 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 export default function AcademicBackground() {
     const academicBackgrounds = [
         {
-            startingDate: "2022",
-            endingDate: "2020",
+            startingDate: "2020",
+            endingDate: "2022",
             degree: "Master's",
             domain: "Computer Applications",
             universityName: "Maulana Abul Kalam Azad University of Technology",
