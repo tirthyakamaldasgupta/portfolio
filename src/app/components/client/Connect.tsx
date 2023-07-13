@@ -1,10 +1,11 @@
-import { Box, Button, Card, CardBody, CardHeader, Flex, FormControl, FormErrorMessage, FormHelperText, FormLabel, HStack, Heading, Input, Link, SimpleGrid, Stack, Tag, TagCloseButton, TagLabel, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardHeader, Flex, FormControl, FormErrorMessage, FormHelperText, FormLabel, HStack, Heading, Icon, Input, Link, SimpleGrid, Stack, Tag, TagCloseButton, TagLabel, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 import { faLinkedin, faMedium, faHashnode, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { faArrowRight, faL, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faL, faMugSaucer, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { SetStateAction, useState } from "react";
 import { isError } from "util";
+import CoffeeCupIcon from "./CoffeeIcon";
 
 export default function Connect() {
     const isMaxScreen = useBreakpointValue({ base: true, md: true, lg: true, xl: false });
@@ -86,15 +87,9 @@ export default function Connect() {
                         </Flex>
                     </Flex>
 
-                    <HStack wrap={isMaxScreen ? "wrap" : "nowrap"} align="center" spacing={2}>
-                        <Heading size={isMaxScreen ? "xs" : "sm"} marginY={5}>
-                            If you live nearby, we can always sit over a cup of
-                        </Heading>
-                        <Image src="/coffee-cup.png" alt="Coffee cup image" width={20} height={20} />
-                        <Heading size={isMaxScreen ? "xs" : "sm"} marginY={5}>
-                            at
-                        </Heading>
-                    </HStack>
+                    <Heading size={"sm"} marginY={5}>
+                        If you live nearby, we can always sit over a cup of <CoffeeCupIcon fontSize={"xl"} /> at
+                    </Heading>
 
                     <Text>Block B and C, New Tollygunge, Aurobindo Park, South Kolkata, West Bengal 700093</Text>
 
