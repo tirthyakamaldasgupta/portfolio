@@ -185,15 +185,15 @@ export default function Connect() {
                 <Flex direction={isMaxScreen ? "column" : "row"} flexWrap={isMaxScreen ? "wrap" : "nowrap"}>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link}
-                            href="tel:+8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
+                            href="tel:+91 8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
                             textDecoration="none" _hover={{ textDecoration: "none" }}>
-                            +8240603916
+                            +91 8240603916
                         </Button>
                     </Flex>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
-                        <Button as={Link} href="tel:+8017352824" width={isMaxScreen ? "100%" : "auto"}
+                        <Button as={Link} href="tel:+91 8017352824" width={isMaxScreen ? "100%" : "auto"}
                             colorScheme="green" textDecoration="none" _hover={{ textDecoration: "none" }}>
-                            +8017352824
+                            +91 8017352824
                         </Button>
                     </Flex>
                 </Flex>
@@ -213,10 +213,6 @@ export default function Connect() {
                             </Link>
                         </WrapItem>))}
                 </Wrap>
-                {/* {socialAccounts.map((socialAccount, index) => (
-                    <Link href={socialAccount.link} key={index} isExternal marginRight={3}>
-                        <FontAwesomeIcon icon={socialAccount.icon} size="2xl" color={socialAccount.color}/>
-                    </Link>))} */}
             </Box>
 
             <Box>
