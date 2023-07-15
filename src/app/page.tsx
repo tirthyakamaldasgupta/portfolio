@@ -14,42 +14,42 @@ export default function Home() {
     return (
         <>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <Navbar />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <ProfileIntroduction />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <ProfessionalExperience />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <Projects />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <AcademicBackground />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <Blogs />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={10}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <Connect />
                 </Box>
             </Flex>
             <Flex align="center" justify="center" marginY={20}>
-                <Box width={{ base: "95%", lg: "60%" }}>
+                <Box width={{ base: "95%", lg: "70%" }}>
                     <Footer />
                 </Box>
             </Flex>

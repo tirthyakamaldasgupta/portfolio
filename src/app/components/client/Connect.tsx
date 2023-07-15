@@ -4,21 +4,24 @@ import {
     Flex,
     FormControl,
     FormErrorMessage,
+    HStack,
     Heading,
     Input,
     Link,
     SimpleGrid,
+    Spacer,
     Text,
+    VStack,
     useBreakpointValue
 } from "@chakra-ui/react";
-import {faGithub, faHashnode, faLinkedin, faMedium, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {SetStateAction, useState} from "react";
+import { faGithub, faHashnode, faLinkedin, faMedium, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRight, faCheckDouble } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SetStateAction, useState } from "react";
 import CoffeeCupIcon from "./CoffeeIcon";
 
 export default function Connect() {
-    const isMaxScreen = useBreakpointValue({base: true, md: true});
+    const isMaxScreen = useBreakpointValue({ base: true, md: true });
 
     const socialAccounts = [{
         icon: faLinkedin, color: "#0a66c2", link: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/"
@@ -44,6 +47,10 @@ export default function Connect() {
     const [messageError, setMessageError] = useState(true);
 
     const [formError, setFormError] = useState(false);
+
+    const [formSubmitted, setFormSubmitted] = useState(true);
+    const [formSubmissionError, setFormSubmissionError] = useState(false);
+    const [formSubmissionErrorMessage, setFormSubmissionErrorMessage] = useState("");
 
     const handleFirstNameChange = (e: { target: { value: any; }; }) => {
         setFormError(false);
@@ -89,10 +96,68 @@ export default function Connect() {
         setMessageError(value === "");
     };
 
+    const handleNewEnquiryFormInitialisation = () => {
+        setFormSubmitted(false);
+
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setCompanyName("");
+        setMessage("");
+    };
+
     const handleFormSubmit = () => {
         const formHasError = firstName === "" || lastName === "" || email === "" || message === "";
 
         setFormError(formHasError);
+
+        if (!formHasError) {
+            setFormSubmissionError(false);
+            setFormSubmissionErrorMessage("");
+
+            const currentDate = new Date();
+            const localTimestampInEpoch = currentDate.getTime() - (currentDate.getTimezoneOffset() * 60000);
+
+            const headers = {
+                "Content-Type": "application/json; charset=utf-8"
+            };
+
+            const data = {
+                timestamp: localTimestampInEpoch,
+                first_name: firstName,
+                last_name: lastName,
+                email: email,
+                company: companyName,
+                message: message
+            };
+
+            fetch(`${process.env.NEXT_PUBLIC_ENQUIRY_FORM_SUBMISSION_ENDPOINT}`, {
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify(data),
+                redirect: "follow"
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.message === "Enquiry added successfully") {
+                        setFormSubmitted(true);
+                        setFormSubmissionError(false);
+                        setFormSubmissionErrorMessage("");
+                    }
+                })
+                .catch(error => {
+                    setFormSubmissionError(true);
+                    setFormSubmissionErrorMessage("I am sorry, but it looks like there was an error processing your request. I have been notified of the issue and I am working to resolve it as soon as possible. In the meantime, if you have any questions or need further assistance, please feel free to email me directly. Thank you for your patience and understanding.");
+
+                    if (error instanceof TypeError) {
+                        // Log error
+                    }
+
+                    switch (error.code) {
+                        // Log error
+                    }
+                });
+        }
     }
 
     return (<>
@@ -108,13 +173,13 @@ export default function Connect() {
                 <Flex direction={isMaxScreen ? "column" : "row"} flexWrap={isMaxScreen ? "wrap" : "nowrap"}>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link} href="mailto:dasguptatirthyakamal@gmail.com"
-                                width={isMaxScreen ? "100%" : "auto"} colorScheme="red" textDecoration={"none"}
-                                _hover={{textDecoration: "none"}}>dasguptatirthyakamal@gmail.com</Button>
+                            width={isMaxScreen ? "100%" : "auto"} colorScheme="red" textDecoration={"none"}
+                            _hover={{ textDecoration: "none" }}>dasguptatirthyakamal@gmail.com</Button>
                     </Flex>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link} href="mailto:dasguptatirthyakamal@outlook.com"
-                                width={isMaxScreen ? "100%" : "auto"} colorScheme="blue" textDecoration={"none"}
-                                _hover={{textDecoration: "none"}}>dasguptatirthyakamal@outlook.com</Button>
+                            width={isMaxScreen ? "100%" : "auto"} colorScheme="blue" textDecoration={"none"}
+                            _hover={{ textDecoration: "none" }}>dasguptatirthyakamal@outlook.com</Button>
                     </Flex>
                 </Flex>
 
@@ -122,21 +187,21 @@ export default function Connect() {
                 <Flex direction={isMaxScreen ? "column" : "row"} flexWrap={isMaxScreen ? "wrap" : "nowrap"}>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link}
-                                href="tel:+8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
-                                textDecoration="none" _hover={{textDecoration: "none"}}>
+                            href="tel:+8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
+                            textDecoration="none" _hover={{ textDecoration: "none" }}>
                             +8240603916
                         </Button>
                     </Flex>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link} href="tel:+8017352824" width={isMaxScreen ? "100%" : "auto"}
-                                colorScheme="green" textDecoration="none" _hover={{textDecoration: "none"}}>
+                            colorScheme="green" textDecoration="none" _hover={{ textDecoration: "none" }}>
                             +8017352824
                         </Button>
                     </Flex>
                 </Flex>
 
                 <Heading size={"sm"} marginY={5}>
-                    If you live nearby, we can always sit over a cup of <CoffeeCupIcon fontSize={"xl"}/> at
+                    If you live nearby, we can always sit over a cup of <CoffeeCupIcon fontSize={"xl"} /> at
                 </Heading>
 
                 <Text>Block B and C, New Tollygunge, Aurobindo Park, South Kolkata, West Bengal 700093</Text>
@@ -145,44 +210,119 @@ export default function Connect() {
 
                 {socialAccounts.map((socialAccount, index) => (
                     <Link href={socialAccount.link} key={index} isExternal marginRight={3}>
-                        <FontAwesomeIcon icon={socialAccount.icon} size="2xl" color={socialAccount.color}/>
+                        <FontAwesomeIcon icon={socialAccount.icon} size="2xl" color={socialAccount.color} />
                     </Link>))}
             </Box>
 
             <Box>
-                <FormControl isRequired isInvalid={firstNameError} paddingBottom={4}>
-                    <Input type="text" variant="flushed" placeholder="First name *" value={firstName}
-                           onChange={handleFirstNameChange} _placeholder={{color: "inherit", fontWeight: "bold"}}/>
-                    {firstNameError ? (<FormErrorMessage>First name is required.</FormErrorMessage>) : (<></>)}
-                </FormControl>
-                <FormControl isRequired isInvalid={lastNameError} paddingBottom={4}>
-                    <Input type="text" variant="flushed" placeholder="Last name *" value={lastName}
-                           onChange={handleLastNameChange} _placeholder={{color: "inherit", fontWeight: "bold"}}/>
-                    {lastNameError ? (<FormErrorMessage>Last name is required.</FormErrorMessage>) : (<></>)}
-                </FormControl>
-                <FormControl isRequired isInvalid={emailError} paddingBottom={4}>
-                    <Input type="email" variant="flushed" placeholder="Email *" value={email}
-                           onChange={handleEmailChange} _placeholder={{color: "inherit", fontWeight: "bold"}}/>
-                    {emailError ? (<FormErrorMessage>Email is required.</FormErrorMessage>) : (<></>)}
-                </FormControl>
-                <FormControl paddingBottom={4}>
-                    <Input type="text" variant="flushed" placeholder="Company" value={companyName}
-                           onChange={handleCompanyNameChange}
-                           _placeholder={{color: "inherit", fontWeight: "bold"}}/>
-                </FormControl>
-                <FormControl isRequired isInvalid={messageError} paddingBottom={4}>
-                    <Input type="text" variant="flushed" placeholder="Message *" value={message}
-                           onChange={handleMessageChange} _placeholder={{color: "inherit", fontWeight: "bold"}}/>
-                    {messageError ? (<FormErrorMessage>Message is required.</FormErrorMessage>) : (<></>)}
-                </FormControl>
-                {formError ? (
-                    <Text color={"red"} marginBottom={3}>Errors have been detected in the form. Please take a moment
-                        to correct them before proceeding.</Text>) : (<></>)}
-                <FormControl paddingBottom={4}>
-                    <Button type="button" onClick={handleFormSubmit}><Text>Submit enquiry</Text><FontAwesomeIcon
-                        icon={faArrowRight} style={{marginLeft: "5px"}}/></Button>
-                </FormControl>
+                {formSubmitted ? (
+                    <>
+                        <FontAwesomeIcon icon={faCheckDouble} color="#03C988" style={{ marginBottom: 2, width: "30%", height: "30%" }} />
+                        <Heading fontSize={"xl"}>Enquiry submitted!</Heading>
+                        <HStack>
+                            <Text>Want to submit another enquiry?</Text>
+                            <Button type="button" onClick={handleNewEnquiryFormInitialisation}>
+                                <Text>Click here</Text>
+                                <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
+                            </Button>
+                        </HStack>
+                    </>
+                ) : (
+                    <>
+                        <FormControl isRequired isInvalid={firstNameError} paddingBottom={4}>
+                            <Input
+                                type="text"
+                                variant="flushed"
+                                placeholder="First name *"
+                                value={firstName}
+                                onChange={handleFirstNameChange}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
+                            />
+                            {firstNameError ? (
+                                <FormErrorMessage>First name is required.</FormErrorMessage>
+                            ) : (
+                                <></>
+                            )}
+                        </FormControl>
+                        <FormControl isRequired isInvalid={lastNameError} paddingBottom={4}>
+                            <Input
+                                type="text"
+                                variant="flushed"
+                                placeholder="Last name *"
+                                value={lastName}
+                                onChange={handleLastNameChange}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
+                            />
+                            {lastNameError ? (
+                                <FormErrorMessage>Last name is required.</FormErrorMessage>
+                            ) : (
+                                <></>
+                            )}
+                        </FormControl>
+                        <FormControl isRequired isInvalid={emailError} paddingBottom={4}>
+                            <Input
+                                type="email"
+                                variant="flushed"
+                                placeholder="Email *"
+                                value={email}
+                                onChange={handleEmailChange}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
+                            />
+                            {emailError ? (
+                                <FormErrorMessage>Email is required.</FormErrorMessage>
+                            ) : (
+                                <></>
+                            )}
+                        </FormControl>
+                        <FormControl paddingBottom={4}>
+                            <Input
+                                type="text"
+                                variant="flushed"
+                                placeholder="Company"
+                                value={companyName}
+                                onChange={handleCompanyNameChange}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
+                            />
+                        </FormControl>
+                        <FormControl isRequired isInvalid={messageError} paddingBottom={4}>
+                            <Input
+                                type="text"
+                                variant="flushed"
+                                placeholder="Message *"
+                                value={message}
+                                onChange={handleMessageChange}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
+                            />
+                            {messageError ? (
+                                <FormErrorMessage>Message is required.</FormErrorMessage>
+                            ) : (
+                                <></>
+                            )}
+                        </FormControl>
+                        {formError ? (
+                            <Text color="red" marginBottom={3}>
+                                Errors have been detected in the form. Please take a moment to correct them before proceeding.
+                            </Text>
+                        ) : (
+                            <></>
+                        )}
+                        {formSubmissionError ? (
+                            <Text color="red" marginBottom={3}>
+                                {formSubmissionErrorMessage}
+                            </Text>
+                        ) : (
+                            <></>
+                        )}
+                        <FormControl paddingBottom={4}>
+                            <Button type="button" onClick={handleFormSubmit}>
+                                <Text>Submit enquiry</Text>
+                                <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
+                            </Button>
+                        </FormControl>
+                    </>
+                )}
+
             </Box>
-        </SimpleGrid>
+        </SimpleGrid >
     </>)
 }
