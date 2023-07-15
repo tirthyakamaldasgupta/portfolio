@@ -1,7 +1,7 @@
 import { HStack, Heading } from "@chakra-ui/react";
-import NextJSIcon from "./NextJSIcon";
-import ChakraUIIcon from "./ChakraUIIcon";
-import VercelIcon from "./VercelIcon";
+import NextJSIcon from "./icons/NextJSIcon";
+import ChakraUIIcon from "./icons/ChakraUIIcon";
+import VercelIcon from "./icons/VercelIcon";
 
 export default function Footer() {
     return (
