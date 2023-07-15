@@ -10,17 +10,19 @@ import {
     Link,
     SimpleGrid,
     Text,
-    useBreakpointValue
+    useBreakpointValue,
+    Wrap,
+    WrapItem
 } from "@chakra-ui/react";
-import {faGithub, faHashnode, faLinkedin, faMedium, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {faArrowRight, faCheckDouble} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {SetStateAction, useState} from "react";
+import { faGithub, faHashnode, faLinkedin, faMedium, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRight, faCheckDouble } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { SetStateAction, useState } from "react";
 import CoffeeCupIcon from "./CoffeeIcon";
-import {InfinitySpin} from "react-loader-spinner";
+import { InfinitySpin } from "react-loader-spinner";
 
 export default function Connect() {
-    const isMaxScreen = useBreakpointValue({base: true, md: true});
+    const isMaxScreen = useBreakpointValue({ base: true, md: true });
 
     const socialAccounts = [{
         icon: faLinkedin, color: "#0a66c2", link: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/"
@@ -169,13 +171,13 @@ export default function Connect() {
                 <Flex direction={isMaxScreen ? "column" : "row"} flexWrap={isMaxScreen ? "wrap" : "nowrap"}>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link} href="mailto:dasguptatirthyakamal@gmail.com"
-                                width={isMaxScreen ? "100%" : "auto"} colorScheme="red" textDecoration={"none"}
-                                _hover={{textDecoration: "none"}}>dasguptatirthyakamal@gmail.com</Button>
+                            width={isMaxScreen ? "100%" : "auto"} colorScheme="red" textDecoration={"none"}
+                            _hover={{ textDecoration: "none" }}>dasguptatirthyakamal@gmail.com</Button>
                     </Flex>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link} href="mailto:dasguptatirthyakamal@outlook.com"
-                                width={isMaxScreen ? "100%" : "auto"} colorScheme="blue" textDecoration={"none"}
-                                _hover={{textDecoration: "none"}}>dasguptatirthyakamal@outlook.com</Button>
+                            width={isMaxScreen ? "100%" : "auto"} colorScheme="blue" textDecoration={"none"}
+                            _hover={{ textDecoration: "none" }}>dasguptatirthyakamal@outlook.com</Button>
                     </Flex>
                 </Flex>
 
@@ -183,51 +185,58 @@ export default function Connect() {
                 <Flex direction={isMaxScreen ? "column" : "row"} flexWrap={isMaxScreen ? "wrap" : "nowrap"}>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link}
-                                href="tel:+8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
-                                textDecoration="none" _hover={{textDecoration: "none"}}>
+                            href="tel:+8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
+                            textDecoration="none" _hover={{ textDecoration: "none" }}>
                             +8240603916
                         </Button>
                     </Flex>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link} href="tel:+8017352824" width={isMaxScreen ? "100%" : "auto"}
-                                colorScheme="green" textDecoration="none" _hover={{textDecoration: "none"}}>
+                            colorScheme="green" textDecoration="none" _hover={{ textDecoration: "none" }}>
                             +8017352824
                         </Button>
                     </Flex>
                 </Flex>
 
                 <Heading size={"sm"} marginY={5}>
-                    If you live nearby, we can always sit over a cup of <CoffeeCupIcon fontSize={"xl"}/> at
+                    If you live nearby, we can always sit over a cup of <CoffeeCupIcon fontSize={"xl"} /> at
                 </Heading>
 
                 <Text>Block B and C, New Tollygunge, Aurobindo Park, South Kolkata, West Bengal 700093</Text>
 
                 <Heading size={"sm"} marginY={5}>Follow me on</Heading>
-
-                {socialAccounts.map((socialAccount, index) => (
+                <Wrap spacing={1}>
+                    {socialAccounts.map((socialAccount, index) => (
+                        <WrapItem key={index}>
+                            <Link href={socialAccount.link} isExternal marginRight={3}>
+                                <FontAwesomeIcon icon={socialAccount.icon} size="2xl" color={socialAccount.color} />
+                            </Link>
+                        </WrapItem>))}
+                </Wrap>
+                {/* {socialAccounts.map((socialAccount, index) => (
                     <Link href={socialAccount.link} key={index} isExternal marginRight={3}>
                         <FontAwesomeIcon icon={socialAccount.icon} size="2xl" color={socialAccount.color}/>
-                    </Link>))}
+                    </Link>))} */}
             </Box>
 
             <Box>
                 {formSubmitting ? (
                     <Flex justifyContent="center" alignItems="center" height="100%">
-                        <InfinitySpin width="200" color="#03C988"/>
+                        <InfinitySpin width="200" color="#03C988" />
                     </Flex>
                 ) : formSubmitted ? (
                     <Flex direction="column" justifyContent="center" alignItems="center">
                         <FontAwesomeIcon
                             icon={faCheckDouble}
                             color="#03C988"
-                            style={{marginBottom: 2, width: "20%", height: "20%"}}
+                            style={{ marginBottom: 2, width: "20%", height: "20%" }}
                         />
                         <Heading fontSize={"xl"}>Enquiry submitted!</Heading>
                         <HStack marginTop={3}>
                             <Text>Want to submit another enquiry?</Text>
                             <Button type="button" onClick={handleNewEnquiryFormInitialisation}>
                                 <Text>Click here</Text>
-                                <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
+                                <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
                             </Button>
                         </HStack>
                     </Flex>
@@ -240,7 +249,7 @@ export default function Connect() {
                                 placeholder="First name *"
                                 value={firstName}
                                 onChange={handleFirstNameChange}
-                                _placeholder={{color: "inherit", fontWeight: "bold"}}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
                             />
                             {firstNameError ? (
                                 <FormErrorMessage>First name is required.</FormErrorMessage>
@@ -255,7 +264,7 @@ export default function Connect() {
                                 placeholder="Last name *"
                                 value={lastName}
                                 onChange={handleLastNameChange}
-                                _placeholder={{color: "inherit", fontWeight: "bold"}}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
                             />
                             {lastNameError ? (
                                 <FormErrorMessage>Last name is required.</FormErrorMessage>
@@ -270,7 +279,7 @@ export default function Connect() {
                                 placeholder="Email *"
                                 value={email}
                                 onChange={handleEmailChange}
-                                _placeholder={{color: "inherit", fontWeight: "bold"}}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
                             />
                             {emailError ? (
                                 <FormErrorMessage>Email is required.</FormErrorMessage>
@@ -285,7 +294,7 @@ export default function Connect() {
                                 placeholder="Company"
                                 value={companyName}
                                 onChange={handleCompanyNameChange}
-                                _placeholder={{color: "inherit", fontWeight: "bold"}}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
                             />
                         </FormControl>
                         <FormControl isRequired isInvalid={messageError} paddingBottom={4}>
@@ -295,7 +304,7 @@ export default function Connect() {
                                 placeholder="Message *"
                                 value={message}
                                 onChange={handleMessageChange}
-                                _placeholder={{color: "inherit", fontWeight: "bold"}}
+                                _placeholder={{ color: "inherit", fontWeight: "bold" }}
                             />
                             {messageError ? (
                                 <FormErrorMessage>Message is required.</FormErrorMessage>
@@ -321,13 +330,13 @@ export default function Connect() {
                         <FormControl paddingBottom={4}>
                             <Button type="button" onClick={handleFormSubmit}>
                                 <Text>Submit enquiry</Text>
-                                <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
+                                <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
                             </Button>
                         </FormControl>
                     </>
                 )}
 
             </Box>
-        </SimpleGrid>
+        </SimpleGrid >
     </>)
 }
