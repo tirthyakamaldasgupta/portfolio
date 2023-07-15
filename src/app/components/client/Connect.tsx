@@ -19,6 +19,7 @@ import { faArrowRight, faCheckDouble } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SetStateAction, useState } from "react";
 import CoffeeCupIcon from "./CoffeeIcon";
+import { InfinitySpin } from "react-loader-spinner";
 
 export default function Connect() {
     const isMaxScreen = useBreakpointValue({ base: true, md: true });
@@ -48,7 +49,8 @@ export default function Connect() {
 
     const [formError, setFormError] = useState(false);
 
-    const [formSubmitted, setFormSubmitted] = useState(true);
+    const [formSubmitting, setFormSubmitting] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState(false);
     const [formSubmissionError, setFormSubmissionError] = useState(false);
     const [formSubmissionErrorMessage, setFormSubmissionErrorMessage] = useState("");
 
@@ -114,6 +116,7 @@ export default function Connect() {
         if (!formHasError) {
             setFormSubmissionError(false);
             setFormSubmissionErrorMessage("");
+            setFormSubmitting(true);
 
             const currentDate = new Date();
             const localTimestampInEpoch = currentDate.getTime() - (currentDate.getTimezoneOffset() * 60000);
@@ -139,6 +142,8 @@ export default function Connect() {
             })
                 .then(response => response.json())
                 .then(result => {
+                    setFormSubmitting(false);
+
                     if (result.message === "Enquiry added successfully") {
                         setFormSubmitted(true);
                         setFormSubmissionError(false);
@@ -146,6 +151,7 @@ export default function Connect() {
                     }
                 })
                 .catch(error => {
+                    setFormSubmitting(false);
                     setFormSubmissionError(true);
                     setFormSubmissionErrorMessage("I am sorry, but it looks like there was an error processing your request. I have been notified of the issue and I am working to resolve it as soon as possible. In the meantime, if you have any questions or need further assistance, please feel free to email me directly. Thank you for your patience and understanding.");
 
@@ -215,18 +221,26 @@ export default function Connect() {
             </Box>
 
             <Box>
-                {formSubmitted ? (
-                    <>
-                        <FontAwesomeIcon icon={faCheckDouble} color="#03C988" style={{ marginBottom: 2, width: "30%", height: "30%" }} />
+                {formSubmitting ? (
+                    <Flex justifyContent="center" alignItems="center" height="100%">
+                        <InfinitySpin width="200" color="#03C988" />
+                    </Flex>
+                ) : formSubmitted ? (
+                    <Flex direction="column" justifyContent="center" alignItems="center">
+                        <FontAwesomeIcon
+                            icon={faCheckDouble}
+                            color="#03C988"
+                            style={{ marginBottom: 2, width: "20%", height: "20%" }}
+                        />
                         <Heading fontSize={"xl"}>Enquiry submitted!</Heading>
-                        <HStack>
+                        <HStack marginTop={3}>
                             <Text>Want to submit another enquiry?</Text>
                             <Button type="button" onClick={handleNewEnquiryFormInitialisation}>
                                 <Text>Click here</Text>
                                 <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
                             </Button>
                         </HStack>
-                    </>
+                    </Flex>
                 ) : (
                     <>
                         <FormControl isRequired isInvalid={firstNameError} paddingBottom={4}>
