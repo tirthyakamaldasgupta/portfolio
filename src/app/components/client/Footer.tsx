@@ -1,10 +1,20 @@
-import { Heading } from "@chakra-ui/react";
+import { HStack, Heading } from "@chakra-ui/react";
+import NextJSIcon from "./NextJSIcon";
+import ChakraUIIcon from "./ChakraUIIcon";
+import VercelIcon from "./VercelIcon";
 
 export default function Footer() {
     return (
         <>
             <Heading size={"xs"} color={"#ffffff"} textAlign={"center"} marginBottom={2}>Copyright © 2023 Tirthya Kamal Dasgupta. All rights reserved.</Heading>
-            <Heading size={"xs"} color={"#ffffff"} textAlign={"center"} fontWeight={"normal"}>This website is designed and developed by Tirthya Kamal Dasgupta using Next.js and Chakra UI, and deployed to Vercel.</Heading>
+            <HStack justifyContent={"center"}>
+                <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>Powered by</Heading>
+                <NextJSIcon />
+                <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>and</Heading>
+                <ChakraUIIcon />
+                <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>, and deployed to</Heading>
+                <VercelIcon />
+            </HStack>
         </>
     )
 }
