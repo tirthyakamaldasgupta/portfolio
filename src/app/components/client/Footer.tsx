@@ -1,4 +1,4 @@
-import { HStack, Heading } from "@chakra-ui/react";
+import { HStack, Heading, Link } from "@chakra-ui/react";
 import NextJSIcon from "./icons/NextJSIcon";
 import ChakraUIIcon from "./icons/ChakraUIIcon";
 import VercelIcon from "./icons/VercelIcon";
@@ -9,11 +9,11 @@ export default function Footer() {
             <Heading size={"xs"} color={"#ffffff"} textAlign={"center"} marginBottom={2}>Copyright © 2023 Tirthya Kamal Dasgupta. All rights reserved.</Heading>
             <HStack justifyContent={"center"}>
                 <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>Powered by</Heading>
-                <NextJSIcon />
+                <Link href="https://nextjs.org/" target={"_blank"} rel="noreferrer" isExternal><NextJSIcon /></Link>
                 <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>and</Heading>
-                <ChakraUIIcon />
+                <Link href="https://chakra-ui.com/" target={"_blank"} rel="noreferrer" isExternal><ChakraUIIcon /></Link>
                 <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>and deployed to</Heading>
-                <VercelIcon />
+                <Link href="https://vercel.com/" target={"_blank"} rel="noreferrer" isExternal><VercelIcon /></Link>
             </HStack>
         </>
     )
