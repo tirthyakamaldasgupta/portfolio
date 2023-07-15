@@ -12,7 +12,7 @@ export default function Footer() {
                 <NextJSIcon />
                 <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>and</Heading>
                 <ChakraUIIcon />
-                <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>, and deployed to</Heading>
+                <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>and deployed to</Heading>
                 <VercelIcon />
             </HStack>
         </>
