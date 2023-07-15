@@ -18,7 +18,7 @@ import { faGithub, faHashnode, faLinkedin, faMedium, faYoutube } from "@fortawes
 import { faArrowRight, faCheckDouble } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SetStateAction, useState } from "react";
-import CoffeeCupIcon from "./CoffeeIcon";
+import CoffeeCupIcon from "./icons/CoffeeCupIcon";
 import { InfinitySpin } from "react-loader-spinner";
 
 export default function Connect() {
