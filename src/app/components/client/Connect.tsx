@@ -213,10 +213,6 @@ export default function Connect() {
                             </Link>
                         </WrapItem>))}
                 </Wrap>
-                {/* {socialAccounts.map((socialAccount, index) => (
-                    <Link href={socialAccount.link} key={index} isExternal marginRight={3}>
-                        <FontAwesomeIcon icon={socialAccount.icon} size="2xl" color={socialAccount.color}/>
-                    </Link>))} */}
             </Box>
 
             <Box>
