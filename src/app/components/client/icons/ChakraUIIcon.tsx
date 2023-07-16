@@ -4,7 +4,7 @@ const ChakraUIIcon = () => {
   return (
     <svg
       style={{ color: "white" }}
-      height="20"
+      height="15"
       role="img"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
