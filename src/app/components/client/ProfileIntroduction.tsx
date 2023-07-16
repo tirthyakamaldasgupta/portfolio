@@ -5,7 +5,7 @@ export default function ProfileIntroduction() {
         <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size="3xl" color={"#03C988"} marginBottom={5}>
-                    Hello. I&apos;m,
+                    Hello! I&apos;m,
                 </Heading>
                 <Heading size="2xl" fontWeight={"semibold"} marginBottom={3} color={"#ffffff"}>
                     Tirthya Kamal Dasgupta

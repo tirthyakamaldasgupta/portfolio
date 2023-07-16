@@ -1,10 +1,10 @@
 import { Box, Button, Flex, Heading, IconButton, Spacer, Text, useBreakpointValue } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useState } from "react";
-import { Kaushan_Script } from "next/font/google";
+import { Quicksand } from "next/font/google";
 
-const kaushanScript = Kaushan_Script({
-    weight: "400",
+const quicksand = Quicksand({
+    weight: "600",
     subsets: ["latin"],
 });
 
@@ -21,7 +21,7 @@ export default function Navbar() {
     return (
         <Box as="nav" bg="transparent" py={2} px={4} boxShadow="sm" zIndex={1}>
             <Flex align="center">
-                <Heading className={kaushanScript.className} color={"#ff8c00"}>
+                <Heading className={quicksand.className} color={"#F2B6A0"}>
                     Tirthya Kamal Dasgupta
                 </Heading>
                 <Spacer />
