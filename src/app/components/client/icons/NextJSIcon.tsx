@@ -5,7 +5,7 @@ const NextJSIcon = () => {
     <svg
       aria-label="Next.js logomark"
       className="next-mark_root__iLw9v"
-      height="35"
+      height="27"
       role="img"
       viewBox="0 0 180 180"
     >

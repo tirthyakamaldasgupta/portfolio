@@ -3,7 +3,7 @@ import React from "react";
 const VercelIcon = () => {
     return (
         <svg
-            height="18"
+            height="15"
             viewBox="0 0 76 65"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
