@@ -1,7 +1,7 @@
-import { Box, Button, Heading, Link, SimpleGrid, Tag, TagLabel, TagLeftIcon, Text } from "@chakra-ui/react";
-import { faArrowRight, faTag, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal } from "react";
+import {Box, Button, Heading, Link, SimpleGrid, Tag, TagLabel, TagLeftIcon, Text} from "@chakra-ui/react";
+import {faArrowRight, faTag, faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal} from "react";
 
 export default function ProfessionalExperience() {
     const professionalExperiences = [{
@@ -56,18 +56,18 @@ export default function ProfessionalExperience() {
 
                 <Box>
                     <Heading size={"sm"} color={"#ffffff"}
-                        marginBottom={2}>{professionalExperience.jobTitle}</Heading>
+                             marginBottom={2}>{professionalExperience.jobTitle}</Heading>
                     <Heading size={"sm"}><Link
                         href={professionalExperience.companyLink} target={"_blank"}
                         rel={"noopener noreferrer"}>{professionalExperience.companyName}<FontAwesomeIcon
-                            icon={faUpRightFromSquare} style={{ marginLeft: "5px" }} /></Link></Heading>
+                        icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link></Heading>
                     <Text marginY={5}>{professionalExperience.jobDescription}</Text>
 
                     {professionalExperience.skills.map((skill: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined, skillIndex: Key | null | undefined) => (
                         <Tag key={skillIndex} variant={"solid"} size={"md"} isTruncated={false}
-                            borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
+                             borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
                             <TagLeftIcon boxSize={4}>
-                                <FontAwesomeIcon icon={faTag} />
+                                <FontAwesomeIcon icon={faTag}/>
                             </TagLeftIcon>
                             <TagLabel>{skill}</TagLabel>
                         </Tag>))}
@@ -78,7 +78,7 @@ export default function ProfessionalExperience() {
             <Box>
                 <Button onClick={downloadResume}>
                     <Text>Download resume</Text>
-                    <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
+                    <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
                 </Button>
             </Box>
         </SimpleGrid>

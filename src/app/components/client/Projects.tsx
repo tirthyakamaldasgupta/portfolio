@@ -1,6 +1,6 @@
-import { Box, Button, Heading, Link, SimpleGrid, Tag, TagLabel, TagLeftIcon, Text } from "@chakra-ui/react";
-import { faArrowRight, faTag, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {Box, Button, Heading, Link, SimpleGrid, Tag, TagLabel, TagLeftIcon, Text} from "@chakra-ui/react";
+import {faArrowRight, faTag, faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Projects() {
     const workProjects = [{
@@ -31,14 +31,14 @@ export default function Projects() {
             designated directory, actively searching for any new PAN Card images that may have been added. Upon
             detecting image(s), it seamlessly converts them to base64 representation, optimizing its compatibility
             for subsequent processing.
-            <br />
-            <br />
+            <br/>
+            <br/>
             The application harnesses the immense capabilities of IDfy&apos;s PAN OCR API, a cutting-edge solution that
             leverages advanced optical character recognition technology specifically tailored for PAN Cards. By
             integrating this API into the workflow, the application retrieves comprehensive and accurate metadata
             from the PAN Card images, extracting key details such as name, date of birth, PAN number, and more.
-            <br />
-            <br />
+            <br/>
+            <br/>
             With the extracted metadata in hand, the application proceeds to store this valuable information in a
             secure and efficient MySQL database, completely managed by PlanetScale. This enables streamlined access,
             retrieval, and management of PAN Card data, promoting easy and secured handling of user data and minimizing
@@ -66,16 +66,16 @@ export default function Projects() {
                     <Heading size="sm" color="#ffffff" marginBottom={2}>{project.projectTitle}</Heading>
                     <Heading size="sm">
                         <Link href={project.companyLink} target={"_blank"}
-                            rel={"noopener noreferrer"}>{project.companyName}<FontAwesomeIcon
-                                icon={faUpRightFromSquare} style={{ marginLeft: "5px" }} /></Link>
+                              rel={"noopener noreferrer"}>{project.companyName}<FontAwesomeIcon
+                            icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link>
                     </Heading>
                     <Text marginY={5}>{project.projectDescription}</Text>
 
                     {project.skills.map((skill, skillIndex) => (
                         <Tag key={skillIndex} variant="solid" size="md" isTruncated={false} borderRadius="full"
-                            marginRight={2} marginBottom={2} backgroundColor="#03b077">
+                             marginRight={2} marginBottom={2} backgroundColor="#03b077">
                             <TagLeftIcon boxSize={4}>
-                                <FontAwesomeIcon icon={faTag} />
+                                <FontAwesomeIcon icon={faTag}/>
                             </TagLeftIcon>
                             <TagLabel>{skill}</TagLabel>
                         </Tag>))}
@@ -94,18 +94,18 @@ export default function Projects() {
 
                     {project.skills.map((skill, skillIndex) => (
                         <Tag key={skillIndex} variant="solid" size="md" isTruncated={false} borderRadius="full"
-                            marginRight={2} marginBottom={2} backgroundColor="#03b077">
+                             marginRight={2} marginBottom={2} backgroundColor="#03b077">
                             <TagLeftIcon boxSize={4}>
-                                <FontAwesomeIcon icon={faTag} />
+                                <FontAwesomeIcon icon={faTag}/>
                             </TagLeftIcon>
                             <TagLabel>{skill}</TagLabel>
                         </Tag>))}
 
                     <Box marginTop={8}>
                         <Button as={Link} href={project.buttonLink} target={"_blank"}
-                            rel={"noopener noreferrer"} textDecoration={"none"}
-                            _hover={{ textDecoration: "none" }}><Text>{project.buttonText}</Text><FontAwesomeIcon
-                                icon={faArrowRight} style={{ marginLeft: "5px" }} /></Button>
+                                rel={"noopener noreferrer"} textDecoration={"none"}
+                                _hover={{textDecoration: "none"}}><Text>{project.buttonText}</Text><FontAwesomeIcon
+                            icon={faArrowRight} style={{marginLeft: "5px"}}/></Button>
                     </Box>
                 </Box>))}
             </Box>

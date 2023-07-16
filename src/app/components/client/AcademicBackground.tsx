@@ -1,6 +1,4 @@
-import { Box, Heading, Link, SimpleGrid } from "@chakra-ui/react";
-import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {Box, Heading, SimpleGrid} from "@chakra-ui/react";
 
 export default function AcademicBackground() {
     const academicBackgrounds = [
@@ -39,7 +37,7 @@ export default function AcademicBackground() {
 
                     <Box>
                         <Heading size={"sm"} color={"#ffffff"}
-                            marginBottom={2}>{academicBackground.degree} degree, {academicBackground.domain}</Heading>
+                                 marginBottom={2}>{academicBackground.degree} degree, {academicBackground.domain}</Heading>
                         <Heading size={"sm"}>{academicBackground.universityName}</Heading>
                     </Box>
                 </SimpleGrid>
