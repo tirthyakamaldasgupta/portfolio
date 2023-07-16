@@ -1,11 +1,10 @@
 import {Box, Heading, SimpleGrid, Text} from "@chakra-ui/react";
 
 export default function ProfileIntroduction() {
-    return (
-        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
+    return (<SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size="3xl" color={"#03C988"} marginBottom={5}>
-                    Hello. I&apos;m,
+                    Hello! I&apos;m,
                 </Heading>
                 <Heading size="2xl" fontWeight={"semibold"} marginBottom={3} color={"#ffffff"}>
                     Tirthya Kamal Dasgupta
@@ -19,7 +18,8 @@ export default function ProfileIntroduction() {
             <Box>
                 <Text>
                     Back in 2014, I got super curious about flashing custom roms on my Android mobile. Although I never
-                    got around to building one, that&apos;s when I realized my true passion lies in developing applications.
+                    got around to building one, that&apos;s when I realized my true passion lies in developing
+                    applications.
                     <br/>
                     <br/>
                     I now work as an <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#ffffff"}>Automation
@@ -34,7 +34,7 @@ export default function ProfileIntroduction() {
                     <br/>
                     <br/>
                     When I&apos;m not busy with that, I love creating <Text as={"span"} display={"inline"}
-                                                                       fontWeight={"semibold"} color={"#ffffff"}>Web
+                                                                            fontWeight={"semibold"} color={"#ffffff"}>Web
                     Applications</Text> and incorporating all sorts of cutting-edge technologies that adhere to industry
                     standards.
                     <br/>
@@ -46,6 +46,5 @@ export default function ProfileIntroduction() {
                     graphics for my dad.
                 </Text>
             </Box>
-        </SimpleGrid>
-    )
+        </SimpleGrid>)
 }

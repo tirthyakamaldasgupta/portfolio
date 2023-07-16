@@ -58,7 +58,8 @@ export default function ProfessionalExperience() {
                     <Heading size={"sm"} color={"#ffffff"}
                              marginBottom={2}>{professionalExperience.jobTitle}</Heading>
                     <Heading size={"sm"}><Link
-                        href={professionalExperience.companyLink}>{professionalExperience.companyName}<FontAwesomeIcon
+                        href={professionalExperience.companyLink} target={"_blank"}
+                        rel={"noopener noreferrer"}>{professionalExperience.companyName}<FontAwesomeIcon
                         icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link></Heading>
                     <Text marginY={5}>{professionalExperience.jobDescription}</Text>
 

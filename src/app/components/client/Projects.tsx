@@ -41,7 +41,7 @@ export default function Projects() {
             <br/>
             With the extracted metadata in hand, the application proceeds to store this valuable information in a
             secure and efficient MySQL database, completely managed by PlanetScale. This enables streamlined access,
-            retrieval, and management of PAN Card data, promoting enhanced organizational efficiency and minimizing
+            retrieval, and management of PAN Card data, promoting easy and secured handling of user data and minimizing
             manual data entry errors. Additionally, it archives the processed images into a separate designated
             folder.
         </>),
@@ -65,7 +65,8 @@ export default function Projects() {
                 {workProjects.map((project, index) => (<Box key={index} marginBottom={8}>
                     <Heading size="sm" color="#ffffff" marginBottom={2}>{project.projectTitle}</Heading>
                     <Heading size="sm">
-                        <Link href={project.companyLink}>{project.companyName}<FontAwesomeIcon
+                        <Link href={project.companyLink} target={"_blank"}
+                              rel={"noopener noreferrer"}>{project.companyName}<FontAwesomeIcon
                             icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link>
                     </Heading>
                     <Text marginY={5}>{project.projectDescription}</Text>
@@ -101,7 +102,8 @@ export default function Projects() {
                         </Tag>))}
 
                     <Box marginTop={8}>
-                        <Button as={Link} href={project.buttonLink} textDecoration={"none"}
+                        <Button as={Link} href={project.buttonLink} target={"_blank"}
+                                rel={"noopener noreferrer"} textDecoration={"none"}
                                 _hover={{textDecoration: "none"}}><Text>{project.buttonText}</Text><FontAwesomeIcon
                             icon={faArrowRight} style={{marginLeft: "5px"}}/></Button>
                     </Box>
