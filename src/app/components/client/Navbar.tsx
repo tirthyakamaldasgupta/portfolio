@@ -12,7 +12,7 @@ export default function Navbar() {
     const isMobile = useBreakpointValue({base: true, lg: false});
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const items = ["EXPERIENCE", "PROJECTS", "EDUCATION", "CONNECT"];
+    const items = ["EXPERIENCE", "PROJECTS", "EDUCATION", "BLOGS", "CONNECT"];
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
