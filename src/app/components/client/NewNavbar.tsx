@@ -65,7 +65,7 @@ export default function NewNavbar() {
                   <Spacer/>
                   <IconButton
                       aria-label="Open menu"
-                      icon={<HamburgerIcon/>}
+                      icon={<HamburgerIcon color={"#bcd4f5"}/>}
                       onClick={onOpen}
                       variant="ghost"
                   />
