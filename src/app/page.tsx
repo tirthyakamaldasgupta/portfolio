@@ -23,32 +23,32 @@ export default function Home() {
                     <ProfileIntroduction/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginY={10}>
+            <Flex align="center" justify="center" marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <ProfessionalExperience/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginY={10}>
+            <Flex align="center" justify="center" marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <Projects/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginY={10}>
+            <Flex align="center" justify="center" marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <AcademicBackground/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginY={10}>
+            <Flex align="center" justify="center" marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <Blogs/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginY={10}>
+            <Flex align="center" justify="center" marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <Connect/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginTop={20} marginBottom={10}>
+            <Flex align="center" justify="center" marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <Footer/>
                 </Box>
