@@ -13,11 +13,7 @@ import Navbar from "./components/client/Navbar";
 export default function Home() {
     return (
         <>
-            <Flex>
-                <Box width={{base: "95%", lg: "70%"}}>
-                    <Navbar/>
-                </Box>
-            </Flex>
+            <Navbar/>
             <Flex align="center" justify="center" marginTop={120} marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <ProfileIntroduction/>
