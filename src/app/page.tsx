@@ -24,7 +24,7 @@ export default function Home() {
                     <NewNavbar/>
                 </Box>
             </Flex>
-            <Flex align="center" justify="center" marginTop="5%" marginBottom={10}>
+            <Flex align="center" justify="center" marginTop={120} marginBottom={10}>
                 <Box width={{base: "95%", lg: "70%"}}>
                     <ProfileIntroduction/>
                 </Box>
