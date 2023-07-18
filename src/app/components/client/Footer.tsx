@@ -4,8 +4,7 @@ import ChakraUIIcon from "./icons/ChakraUIIcon";
 import VercelIcon from "./icons/VercelIcon";
 
 export default function Footer() {
-    return (
-        <>
+    return (<>
             <Heading size={"xs"} color={"#ffffff"} textAlign={"center"} marginBottom={2}>Copyright © 2023 Tirthya Kamal
                 Dasgupta. All rights reserved.</Heading>
             <HStack justifyContent={"center"}>
@@ -16,6 +15,5 @@ export default function Footer() {
                 <Heading size={"xs"} color={"#ffffff"} fontWeight={"normal"}>and deployed to</Heading>
                 <Link href="https://vercel.com/" target={"_blank"} rel="noreferrer" isExternal><VercelIcon/></Link>
             </HStack>
-        </>
-    )
+        </>)
 }

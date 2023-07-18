@@ -159,7 +159,7 @@ export default function Connect() {
     }
 
     return (<>
-        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
+        <SimpleGrid id="connect-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size="md" color="#ffffff">CONNECT WITH ME</Heading>
             </Box>

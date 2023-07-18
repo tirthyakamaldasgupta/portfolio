@@ -59,29 +59,29 @@ export default function Blogs() {
     }];
 
     return (<>
-            <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
-                <Box>
-                    <Heading size="md" color="#ffffff">BLOGS</Heading>
-                </Box>
-            </SimpleGrid>
+        <SimpleGrid id="blogs-grid" columns={[1, 2]} spacing={1} padding={4}>
+            <Box>
+                <Heading size="md" color="#ffffff">BLOGS</Heading>
+            </Box>
+        </SimpleGrid>
 
-            <SimpleGrid columns={1} spacing={1} padding={4}>
-                <Box>
-                    {blogs.map((blog, index) => (<Box key={index} marginBottom={8}>
-                            <Heading size="sm" color="#ffffff" marginBottom={2}>{blog.blogTitle}</Heading>
-                            <Heading size="sm" marginBottom={2}
-                                     fontWeight="normal">{blog.publishDate} | {blog.readTime}</Heading>
-                            <Text marginY={5}>{blog.blogDescription}</Text>
-                            <Heading size="sm" marginBottom={2}>Read more on</Heading>
-                            {blog.platforms.map((platform, platformIndex) => (
-                                <Button key={platformIndex} as={Link} href={platform.link} target={"_blank"}
-                                        rel={"noopener noreferrer"} backgroundColor={"transparent"}
-                                        textDecoration={"none"} _hover={{textDecoration: "none"}} color={"#ffffff"}
-                                        rightIcon={<FontAwesomeIcon icon={faArrowRight}/>}
-                                        leftIcon={<FontAwesomeIcon icon={platform.platformIcon}
-                                                                   color={platform.platformIconColor}/>}/>))}
-                        </Box>))}
-                </Box>
-            </SimpleGrid>
-        </>)
+        <SimpleGrid columns={1} spacing={1} padding={4}>
+            <Box>
+                {blogs.map((blog, index) => (<Box key={index} marginBottom={8}>
+                    <Heading size="sm" color="#ffffff" marginBottom={2}>{blog.blogTitle}</Heading>
+                    <Heading size="sm" marginBottom={2}
+                             fontWeight="normal">{blog.publishDate} | {blog.readTime}</Heading>
+                    <Text marginY={5}>{blog.blogDescription}</Text>
+                    <Heading size="sm" marginBottom={2}>Read more on</Heading>
+                    {blog.platforms.map((platform, platformIndex) => (
+                        <Button key={platformIndex} as={Link} href={platform.link} target={"_blank"}
+                                rel={"noopener noreferrer"} backgroundColor={"transparent"}
+                                textDecoration={"none"} _hover={{textDecoration: "none"}} color={"#ffffff"}
+                                rightIcon={<FontAwesomeIcon icon={faArrowRight}/>}
+                                leftIcon={<FontAwesomeIcon icon={platform.platformIcon}
+                                                           color={platform.platformIconColor}/>}/>))}
+                </Box>))}
+            </Box>
+        </SimpleGrid>
+    </>)
 }

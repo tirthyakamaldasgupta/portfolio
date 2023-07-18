@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import {HamburgerIcon} from "@chakra-ui/icons";
 import {Bebas_Neue} from "next/font/google";
+import {Link as ScrollLink} from "react-scroll";
 
 const bebasNeue = Bebas_Neue({
     weight: "400",
@@ -51,9 +52,19 @@ export default function Navbar() {
             {displayDesktop && (
                 <ButtonGroup gap="2">
                     {items.map((item) => (
-                        <Button key={item} variant="ghost"
-                                color={"inherit"}
-                                _hover={{color: "black", backgroundColor: "gray.50"}}>
+                        <Button
+                            as={ScrollLink}
+                            key={item}
+                            to={item.toLowerCase() + "-grid"}
+                            spy={true}
+                            smooth={true}
+                            offset={-100}
+                            duration={700}
+                            activeClass="active"
+                            className="nav-link"
+                            variant="ghost"
+                            color={"inherit"}
+                            _hover={{color: "black", backgroundColor: "gray.50"}}>
                             {item}
                         </Button>
                     ))}
@@ -74,14 +85,21 @@ export default function Navbar() {
                             <DrawerBody>
                                 {items.map((item) => (
                                     <Button
+                                        as={ScrollLink}
                                         key={item}
+                                        to={item.toLowerCase() + "-grid"}
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-100}
+                                        duration={700}
+                                        activeClass="active"
+                                        className="nav-link"
                                         variant="ghost"
                                         color={"inherit"}
                                         _hover={{color: "black", backgroundColor: "gray.50"}}
                                         w="100%"
                                         mb={2}
                                         onClick={onClose}
-                                        colorScheme="teal"
                                     >
                                         {item}
                                     </Button>

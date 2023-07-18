@@ -1,10 +1,7 @@
 import {createIcon} from "@chakra-ui/react";
 
 const CoffeeCupIcon = createIcon({
-    displayName: "CoffeeCupIcon",
-    viewBox: "0 0 64 64",
-    path: (
-        <g>
+    displayName: "CoffeeCupIcon", viewBox: "0 0 64 64", path: (<g>
             <path
                 fill="#ffffff"
                 d="M54.2,25.7c-1.3,0-2.6,0.3-3.7,0.9c-0.2-3.2-2.9-5.7-6.1-5.7H9.3c-3.4,0-6.1,2.7-6.1,6.1v9.5c0,9.2,5.9,17,14.1,19.9H4
@@ -26,8 +23,7 @@ const CoffeeCupIcon = createIcon({
                 fill="#ffffff"
                 d="M40,16.5c1.2,0,2.3-1,2.3-2.3V5.3c0-1.2-1-2.3-2.3-2.3s-2.3,1-2.3,2.3v8.9C37.7,15.5,38.7,16.5,40,16.5z"
             />
-        </g>
-    ),
+        </g>),
 });
 
 export default CoffeeCupIcon;

@@ -51,7 +51,7 @@ export default function Projects() {
     }];
 
     return (<>
-        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
+        <SimpleGrid id="projects-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size="md" color="#ffffff">PROJECTS</Heading>
             </Box>
@@ -85,7 +85,7 @@ export default function Projects() {
 
         <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
             <Box>
-                <Heading size="sm" marginBottom={[4, 0]}>SIDE SPLITTERS</Heading>
+                <Heading size="sm" marginBottom={[4, 0]}>PASSION PROJECTS</Heading>
             </Box>
             <Box>
                 {sideProjects.map((project, index) => (<Box key={index} marginBottom={8}>
