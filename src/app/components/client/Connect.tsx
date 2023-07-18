@@ -185,9 +185,9 @@ export default function Connect() {
                 <Flex direction={isMaxScreen ? "column" : "row"} flexWrap={isMaxScreen ? "wrap" : "nowrap"}>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
                         <Button as={Link}
-                                href="tel:+91 8240603916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
+                                href="tel:+91 8240693916" width={isMaxScreen ? "100%" : "auto"} colorScheme="green"
                                 textDecoration="none" _hover={{textDecoration: "none"}}>
-                            +91 8240603916
+                            +91 8240693916
                         </Button>
                     </Flex>
                     <Flex direction="column" marginRight={!isMaxScreen ? 2 : 0} marginBottom={isMaxScreen ? 2 : 0}>
