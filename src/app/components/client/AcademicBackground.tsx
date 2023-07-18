@@ -22,7 +22,7 @@ export default function AcademicBackground() {
 
     return (
         <>
-            <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
+            <SimpleGrid id="education-grid" columns={[1, 2]} spacing={1} padding={4}>
                 <Box>
                     <Heading size={"md"} color={"#ffffff"}>ACADEMIC BACKGROUND</Heading>
                 </Box>

@@ -51,7 +51,7 @@ export default function Projects() {
     }];
 
     return (<>
-        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
+        <SimpleGrid id="projects-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size="md" color="#ffffff">PROJECTS</Heading>
             </Box>

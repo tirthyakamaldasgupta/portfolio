@@ -8,12 +8,14 @@ import {
     Flex,
     Heading,
     IconButton,
+    Link,
     Spacer,
     useBreakpointValue,
     useDisclosure
 } from "@chakra-ui/react";
-import {HamburgerIcon} from "@chakra-ui/icons";
-import {Bebas_Neue} from "next/font/google";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { Bebas_Neue } from "next/font/google";
+import { Link as ScrollLink } from "react-scroll";
 
 const bebasNeue = Bebas_Neue({
     weight: "400",
@@ -23,9 +25,9 @@ const bebasNeue = Bebas_Neue({
 export default function Navbar() {
     const items = ["EXPERIENCE", "PROJECTS", "EDUCATION", "BLOGS", "CONNECT"];
 
-    const {isOpen, onOpen, onClose} = useDisclosure();
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const displayDesktop = useBreakpointValue({base: false, lg: true});
+    const displayDesktop = useBreakpointValue({ base: false, lg: true });
 
     return (
         <Flex
@@ -42,7 +44,7 @@ export default function Navbar() {
             zIndex="sticky"
             paddingY={10}
             width="100%"
-            maxWidth={{base: "95%", lg: "70%"}}
+            maxWidth={{ base: "95%", lg: "70%" }}
             mx="auto"
         >
             <Heading fontSize={"lg"} fontWeight={"extrabold"} className={bebasNeue.className} color={"#F2B6A0"}>
@@ -51,9 +53,19 @@ export default function Navbar() {
             {displayDesktop && (
                 <ButtonGroup gap="2">
                     {items.map((item) => (
-                        <Button key={item} variant="ghost"
-                                color={"inherit"}
-                                _hover={{color: "black", backgroundColor: "gray.50"}}>
+                        <Button
+                            as={ScrollLink}
+                            key={item}
+                            to={item.toLowerCase() + "-grid"}
+                            spy={true}
+                            smooth={true}
+                            offset={-100}
+                            duration={700}
+                            activeClass="active"
+                            className="nav-link"
+                            variant="ghost"
+                            color={"inherit"}
+                            _hover={{ color: "black", backgroundColor: "gray.50" }}>
                             {item}
                         </Button>
                     ))}
@@ -61,27 +73,34 @@ export default function Navbar() {
             )}
             {!displayDesktop && (
                 <>
-                    <Spacer/>
+                    <Spacer />
                     <IconButton
                         aria-label="Open menu"
-                        icon={<HamburgerIcon color={"#bcd4f5"}/>}
+                        icon={<HamburgerIcon color={"#bcd4f5"} />}
                         onClick={onOpen}
                         variant="ghost"
                     />
                     <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
-                        <DrawerOverlay/>
+                        <DrawerOverlay />
                         <DrawerContent backgroundColor={"#05001a"}>
                             <DrawerBody>
                                 {items.map((item) => (
                                     <Button
+                                        as={ScrollLink}
                                         key={item}
+                                        to={item.toLowerCase() + "-grid"}
+                                        spy={true}
+                                        smooth={true}
+                                        offset={-100}
+                                        duration={700}
+                                        activeClass="active"
+                                        className="nav-link"
                                         variant="ghost"
                                         color={"inherit"}
-                                        _hover={{color: "black", backgroundColor: "gray.50"}}
+                                        _hover={{ color: "black", backgroundColor: "gray.50" }}
                                         w="100%"
                                         mb={2}
                                         onClick={onClose}
-                                        colorScheme="teal"
                                     >
                                         {item}
                                     </Button>

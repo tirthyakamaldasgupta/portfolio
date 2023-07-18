@@ -33,7 +33,7 @@ export default function ProfessionalExperience() {
     };
 
     return (<>
-        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
+        <SimpleGrid id="experience-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size={"md"} color={"#ffffff"}>PROFESSIONAL EXPERIENCE</Heading>
             </Box>
