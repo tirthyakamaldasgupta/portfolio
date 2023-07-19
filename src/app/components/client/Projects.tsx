@@ -3,26 +3,6 @@ import {faArrowRight, faTag, faUpRightFromSquare} from "@fortawesome/free-solid-
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Projects() {
-    const workProjects = [{
-        projectTitle: "Automated document generation",
-        companyName: "BAAR Technologies",
-        companyLink: "https://www.baar.ai",
-        projectDescription: "With one of my clients in the manufacturing industry, I was responsible for designing and implementing process automation workflows in BAAR, to monitor newly submitted data to a data lake integrated with a mobile application, automatically generating Word documents based on predefined structured templates, and sending them to the relevant stakeholders over email.",
-        skills: ["python-docx", "Document Generation", "Python", "Microsoft Word", "BAAR"]
-    }, {
-        projectTitle: "Automated vendor communication and pricing",
-        companyName: "BAAR Technologies",
-        companyLink: "https://www.baar.ai",
-        projectDescription: "With a prominent client in the manufacturing industry, I simplified the process of communication with the vendors for the supply of components. I achieved this by designing and implementing process automation workflows in BAAR to monitor the conversations between the manufacturer and its vendors, and automatically update the quotation prices of the components accordingly for the client, inside their proprietary application.",
-        skills: ["DocVision", "Python", "BAAR", "Selenium"]
-    }, {
-        projectTitle: "Recruitment process tracking application web client",
-        companyName: "BAAR Technologies",
-        companyLink: "https://www.baar.ai",
-        projectDescription: "I was responsible for creating a streamlined, user-friendly web application client for a global consulting firm. This application simplified interactions with a complex recruitment process tracking application, making it easier for the client to manage their recruitment process.",
-        skills: ["Python", "OAuth", "REST APIs", "Django", "jQuery", "Django REST Framework"]
-    }];
-
     const sideProjects = [{
         projectTitle: "PAN Card Utility",
         projectDescription: (<>
@@ -54,32 +34,6 @@ export default function Projects() {
         <SimpleGrid id="projects-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
                 <Heading size="md" color="#000000">PROJECTS</Heading>
-            </Box>
-        </SimpleGrid>
-
-        <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
-            <Box>
-                <Heading size="sm" marginBottom={[4, 0]}>WORKPLACE VENTURES</Heading>
-            </Box>
-            <Box>
-                {workProjects.map((project, index) => (<Box key={index} marginBottom={8}>
-                    <Heading size="sm" color="#000000" marginBottom={2}>{project.projectTitle}</Heading>
-                    <Heading size="sm">
-                        <Link href={project.companyLink} target={"_blank"}
-                              rel={"noopener noreferrer"}>{project.companyName}<FontAwesomeIcon
-                            icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link>
-                    </Heading>
-                    <Text marginY={5}>{project.projectDescription}</Text>
-
-                    {project.skills.map((skill, skillIndex) => (
-                        <Tag key={skillIndex} variant="solid" size="md" isTruncated={false} borderRadius="full"
-                             marginRight={2} marginBottom={2} backgroundColor="#03b077">
-                            <TagLeftIcon boxSize={4}>
-                                <FontAwesomeIcon icon={faTag}/>
-                            </TagLeftIcon>
-                            <TagLabel>{skill}</TagLabel>
-                        </Tag>))}
-                </Box>))}
             </Box>
         </SimpleGrid>
 
