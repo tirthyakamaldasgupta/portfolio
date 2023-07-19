@@ -27,11 +27,11 @@ export default function Connect() {
     const socialAccounts = [{
         icon: faLinkedin, color: "#0a66c2", link: "https://www.linkedin.com/in/tirthya-kamal-dasgupta/"
     }, {
-        icon: faMedium, color: "#ffffff", link: "https://medium.com/@tirthyakamaldasgupta12"
+        icon: faMedium, color: "#000000", link: "https://medium.com/@tirthyakamaldasgupta12"
     }, {
         icon: faHashnode, color: "#2962FF", link: "https://tirthya-kamal-dasgupta.hashnode.dev/"
     }, {
-        icon: faGithub, color: "#ffffff", link: "https://github.com/tirthyakamaldasgupta"
+        icon: faGithub, color: "#000000", link: "https://github.com/tirthyakamaldasgupta"
     }, {
         icon: faYoutube, color: "#ff0000", link: "https://www.youtube.com/channel/UCnESi7g2P7lhhJ1Jy36SuqA"
     }];
@@ -151,6 +151,7 @@ export default function Connect() {
                     }
                 })
                 .catch(error => {
+                    console.log(error);
                     setFormSubmitting(false);
                     setFormSubmissionError(true);
                     setFormSubmissionErrorMessage("I am sorry, but it looks like there was an error processing your request. I have been notified of the issue and I am working to resolve it as soon as possible. In the meantime, if you have any questions or need further assistance, please feel free to email me directly. Thank you for your patience and understanding.");
@@ -161,7 +162,7 @@ export default function Connect() {
     return (<>
         <SimpleGrid id="connect-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
-                <Heading size="md" color="#ffffff">CONNECT WITH ME</Heading>
+                <Heading size="md" color="#000000">CONNECT WITH ME</Heading>
             </Box>
         </SimpleGrid>
 
@@ -230,7 +231,7 @@ export default function Connect() {
                         <Heading fontSize={"xl"}>Enquiry submitted!</Heading>
                         <HStack marginTop={3}>
                             <Text>Want to submit another enquiry?</Text>
-                            <Button type="button" onClick={handleNewEnquiryFormInitialisation}>
+                            <Button type="button" colorScheme="blackAlpha" onClick={handleNewEnquiryFormInitialisation}>
                                 <Text>Click here</Text>
                                 <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
                             </Button>
@@ -242,6 +243,7 @@ export default function Connect() {
                             <Input
                                 type="text"
                                 variant="flushed"
+                                borderBottomColor={"#526D82"}
                                 placeholder="First name *"
                                 value={firstName}
                                 onChange={handleFirstNameChange}
@@ -257,6 +259,7 @@ export default function Connect() {
                             <Input
                                 type="text"
                                 variant="flushed"
+                                borderBottomColor={"#526D82"}
                                 placeholder="Last name *"
                                 value={lastName}
                                 onChange={handleLastNameChange}
@@ -272,6 +275,7 @@ export default function Connect() {
                             <Input
                                 type="email"
                                 variant="flushed"
+                                borderBottomColor={"#526D82"}
                                 placeholder="Email *"
                                 value={email}
                                 onChange={handleEmailChange}
@@ -287,6 +291,7 @@ export default function Connect() {
                             <Input
                                 type="text"
                                 variant="flushed"
+                                borderBottomColor={"#526D82"}
                                 placeholder="Company"
                                 value={companyName}
                                 onChange={handleCompanyNameChange}
@@ -297,6 +302,7 @@ export default function Connect() {
                             <Input
                                 type="text"
                                 variant="flushed"
+                                borderBottomColor={"#526D82"}
                                 placeholder="Message *"
                                 value={message}
                                 onChange={handleMessageChange}
@@ -324,7 +330,7 @@ export default function Connect() {
                             <></>
                         )}
                         <FormControl paddingBottom={4}>
-                            <Button type="button" onClick={handleFormSubmit}>
+                            <Button type="button" colorScheme="blackAlpha" onClick={handleFormSubmit}>
                                 <Text>Submit enquiry</Text>
                                 <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
                             </Button>

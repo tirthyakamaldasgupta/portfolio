@@ -20,7 +20,7 @@ export default function AcademicBackground() {
     return (<>
             <SimpleGrid id="education-grid" columns={[1, 2]} spacing={1} padding={4}>
                 <Box>
-                    <Heading size={"md"} color={"#ffffff"}>ACADEMIC BACKGROUND</Heading>
+                    <Heading size={"md"} color={"#000000"}>ACADEMIC BACKGROUND</Heading>
                 </Box>
             </SimpleGrid>
 
@@ -32,7 +32,7 @@ export default function AcademicBackground() {
                     </Box>
 
                     <Box>
-                        <Heading size={"sm"} color={"#ffffff"}
+                        <Heading size={"sm"} color={"#000000"}
                                  marginBottom={2}>{academicBackground.degree} degree, {academicBackground.domain}</Heading>
                         <Heading size={"sm"}>{academicBackground.universityName}</Heading>
                     </Box>

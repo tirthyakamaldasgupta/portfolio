@@ -35,7 +35,7 @@ export default function ProfessionalExperience() {
     return (<>
         <SimpleGrid id="experience-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
-                <Heading size={"md"} color={"#ffffff"}>PROFESSIONAL EXPERIENCE</Heading>
+                <Heading size={"md"} color={"#000000"}>PROFESSIONAL EXPERIENCE</Heading>
             </Box>
         </SimpleGrid>
 
@@ -55,7 +55,7 @@ export default function ProfessionalExperience() {
                 </Box>
 
                 <Box>
-                    <Heading size={"sm"} color={"#ffffff"}
+                    <Heading size={"sm"} color={"#000000"}
                              marginBottom={2}>{professionalExperience.jobTitle}</Heading>
                     <Heading size={"sm"}><Link
                         href={professionalExperience.companyLink} target={"_blank"}
@@ -76,7 +76,7 @@ export default function ProfessionalExperience() {
         <SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
             <Box></Box>
             <Box>
-                <Button onClick={downloadResume}>
+                <Button colorScheme="blackAlpha" onClick={downloadResume}>
                     <Text>Download resume</Text>
                     <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
                 </Button>

@@ -53,7 +53,7 @@ export default function Projects() {
     return (<>
         <SimpleGrid id="projects-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
-                <Heading size="md" color="#ffffff">PROJECTS</Heading>
+                <Heading size="md" color="#000000">PROJECTS</Heading>
             </Box>
         </SimpleGrid>
 
@@ -63,7 +63,7 @@ export default function Projects() {
             </Box>
             <Box>
                 {workProjects.map((project, index) => (<Box key={index} marginBottom={8}>
-                    <Heading size="sm" color="#ffffff" marginBottom={2}>{project.projectTitle}</Heading>
+                    <Heading size="sm" color="#000000" marginBottom={2}>{project.projectTitle}</Heading>
                     <Heading size="sm">
                         <Link href={project.companyLink} target={"_blank"}
                               rel={"noopener noreferrer"}>{project.companyName}<FontAwesomeIcon
@@ -89,7 +89,7 @@ export default function Projects() {
             </Box>
             <Box>
                 {sideProjects.map((project, index) => (<Box key={index} marginBottom={8}>
-                    <Heading size="sm" color="#ffffff" marginBottom={2}>{project.projectTitle}</Heading>
+                    <Heading size="sm" color="#000000" marginBottom={2}>{project.projectTitle}</Heading>
                     <Text marginY={5}>{project.projectDescription}</Text>
 
                     {project.skills.map((skill, skillIndex) => (
@@ -103,8 +103,7 @@ export default function Projects() {
 
                     <Box marginTop={8}>
                         <Button as={Link} href={project.buttonLink} target={"_blank"}
-                                rel={"noopener noreferrer"} textDecoration={"none"}
-                                _hover={{textDecoration: "none"}}><Text>{project.buttonText}</Text><FontAwesomeIcon
+                                rel={"noopener noreferrer"} colorScheme="blackAlpha"><Text>{project.buttonText}</Text><FontAwesomeIcon
                             icon={faArrowRight} style={{marginLeft: "5px"}}/></Button>
                     </Box>
                 </Box>))}

@@ -33,8 +33,8 @@ export default function Navbar() {
             as="nav"
             alignItems="center"
             justifyContent="space-between"
-            backgroundColor={"#05001a"}
-            boxShadow="md"
+            backgroundColor={"#F5F5F5"}
+            boxShadow="white"
             padding="2"
             position="fixed"
             top="0"
@@ -46,7 +46,7 @@ export default function Navbar() {
             maxWidth={{base: "95%", lg: "70%"}}
             mx="auto"
         >
-            <Heading fontSize={"lg"} fontWeight={"extrabold"} className={bebasNeue.className} color={"#F2B6A0"}>
+            <Heading fontSize={"lg"} fontWeight={"extrabold"} className={bebasNeue.className} color={"#e36435"}>
                 TIRTHYA KAMAL DASGUPTA
             </Heading>
             {displayDesktop && (
@@ -64,7 +64,7 @@ export default function Navbar() {
                             className="nav-link"
                             variant="ghost"
                             color={"inherit"}
-                            _hover={{color: "black", backgroundColor: "gray.50"}}>
+                            _hover={{color: "#ffffff", backgroundColor: "#000000"}}>
                             {item}
                         </Button>
                     ))}
@@ -75,13 +75,13 @@ export default function Navbar() {
                     <Spacer/>
                     <IconButton
                         aria-label="Open menu"
-                        icon={<HamburgerIcon color={"#bcd4f5"}/>}
+                        icon={<HamburgerIcon color={"#526D82"}/>}
                         onClick={onOpen}
                         variant="ghost"
                     />
                     <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
                         <DrawerOverlay/>
-                        <DrawerContent backgroundColor={"#05001a"}>
+                        <DrawerContent backgroundColor={"#F5F5F5"}>
                             <DrawerBody>
                                 {items.map((item) => (
                                     <Button
@@ -96,7 +96,7 @@ export default function Navbar() {
                                         className="nav-link"
                                         variant="ghost"
                                         color={"inherit"}
-                                        _hover={{color: "black", backgroundColor: "gray.50"}}
+                                        _hover={{color: "#ffffff", backgroundColor: "#000000"}}
                                         w="100%"
                                         mb={2}
                                         onClick={onClose}
