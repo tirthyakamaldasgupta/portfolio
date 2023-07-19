@@ -34,7 +34,7 @@ export default function ProfessionalExperience() {
         jobDescription: (
             <>
                 I have experience with prominent clients in manufacturing and consulting, specializing in process
-                automation for data monitoring, document generation, and vendor communication. I've also developed
+                automation for data monitoring, document generation, and vendor communication. I&apos;ve also developed
                 user-friendly web applications. Below are the projects I have had the opportunity to work on:
                 <br/>
                 <List>
