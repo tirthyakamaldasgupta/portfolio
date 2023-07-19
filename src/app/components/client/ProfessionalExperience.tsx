@@ -1,7 +1,20 @@
-import { Box, Button, Heading, Link, List, ListIcon, ListItem, SimpleGrid, Tag, TagLabel, TagLeftIcon, Text, UnorderedList } from "@chakra-ui/react";
-import { faArrowRight, faCircleCheck, faTag, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal } from "react";
+import {
+    Box,
+    Button,
+    Heading,
+    Link,
+    List,
+    ListIcon,
+    ListItem,
+    SimpleGrid,
+    Tag,
+    TagLabel,
+    TagLeftIcon,
+    Text
+} from "@chakra-ui/react";
+import {faArrowRight, faCircleCheck, faTag, faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal} from "react";
 
 export default function ProfessionalExperience() {
     const professionalExperiences = [{
@@ -20,18 +33,31 @@ export default function ProfessionalExperience() {
         companyLink: "https://www.baar.ai",
         jobDescription: (
             <>
-                I have experience with prominent clients in manufacturing and consulting, specializing in process automation for data monitoring, document generation, and vendor communication. I've also developed user-friendly web applications. Below are the projects I have had the opportunity to work on:
-                <br />
+                I have experience with prominent clients in manufacturing and consulting, specializing in process
+                automation for data monitoring, document generation, and vendor communication. I've also developed
+                user-friendly web applications. Below are the projects I have had the opportunity to work on:
+                <br/>
                 <List>
                     <ListItem>
-                        <ListIcon as={FontAwesomeIcon} icon={faCircleCheck} color={"#03C988"} />
-                        With one of my clients in the manufacturing industry, I was responsible for designing and implementing process automation workflows in BAAR, to monitor newly submitted data to a data lake integrated with a mobile application, automatically generating Word documents based on predefined structured templates, and sending them to the relevant stakeholders over email.</ListItem>
+                        <ListIcon as={FontAwesomeIcon} icon={faCircleCheck} color={"#03C988"}/>
+                        With one of my clients in the manufacturing industry, I was responsible for designing and
+                        implementing process automation workflows in BAAR, to monitor newly submitted data to a data
+                        lake integrated with a mobile application, automatically generating Word documents based on
+                        predefined structured templates, and sending them to the relevant stakeholders over
+                        email.</ListItem>
                     <ListItem>
-                        <ListIcon as={FontAwesomeIcon} icon={faCircleCheck} color={"#03C988"} />
-                        With a prominent client in the manufacturing industry, I simplified the process of communication with the vendors for the supply of components. I achieved this by designing and implementing process automation workflows in BAAR to monitor the conversations between the manufacturer and its vendors, and automatically update the quotation prices of the components accordingly for the client, inside their proprietary application.</ListItem>
+                        <ListIcon as={FontAwesomeIcon} icon={faCircleCheck} color={"#03C988"}/>
+                        With a prominent client in the manufacturing industry, I simplified the process of communication
+                        with the vendors for the supply of components. I achieved this by designing and implementing
+                        process automation workflows in BAAR to monitor the conversations between the manufacturer and
+                        its vendors, and automatically update the quotation prices of the components accordingly for the
+                        client, inside their proprietary application.</ListItem>
                     <ListItem>
-                        <ListIcon as={FontAwesomeIcon} icon={faCircleCheck} color={"#03C988"} />
-                        I was responsible for creating a streamlined, user-friendly web application client for a global consulting firm. This application simplified interactions with a complex recruitment process tracking application, making it easier for the client to manage their recruitment process.</ListItem>
+                        <ListIcon as={FontAwesomeIcon} icon={faCircleCheck} color={"#03C988"}/>
+                        I was responsible for creating a streamlined, user-friendly web application client for a global
+                        consulting firm. This application simplified interactions with a complex recruitment process
+                        tracking application, making it easier for the client to manage their recruitment
+                        process.</ListItem>
                 </List>
             </>
         ),
@@ -93,18 +119,18 @@ export default function ProfessionalExperience() {
 
                 <Box>
                     <Heading size={"sm"} color={"#000000"}
-                        marginBottom={2}>{professionalExperience.jobTitle}</Heading>
+                             marginBottom={2}>{professionalExperience.jobTitle}</Heading>
                     <Heading size={"sm"}><Link
                         href={professionalExperience.companyLink} target={"_blank"}
                         rel={"noopener noreferrer"}>{professionalExperience.companyName}<FontAwesomeIcon
-                            icon={faUpRightFromSquare} style={{ marginLeft: "5px" }} /></Link></Heading>
+                        icon={faUpRightFromSquare} style={{marginLeft: "5px"}}/></Link></Heading>
                     <Text marginY={5}>{professionalExperience.jobDescription}</Text>
 
                     {professionalExperience.skills.map((skill: string | number | boolean | ReactElement | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined, skillIndex: Key | null | undefined) => (
                         <Tag key={skillIndex} variant={"solid"} size={"md"} isTruncated={false}
-                            borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
+                             borderRadius={"full"} marginRight={2} marginBottom={2} backgroundColor={"#03b077"}>
                             <TagLeftIcon boxSize={4}>
-                                <FontAwesomeIcon icon={faTag} />
+                                <FontAwesomeIcon icon={faTag}/>
                             </TagLeftIcon>
                             <TagLabel>{skill}</TagLabel>
                         </Tag>))}
@@ -115,7 +141,7 @@ export default function ProfessionalExperience() {
             <Box>
                 <Button colorScheme="blackAlpha" onClick={downloadResume}>
                     <Text>Download resume</Text>
-                    <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
+                    <FontAwesomeIcon icon={faArrowRight} style={{marginLeft: "5px"}}/>
                 </Button>
             </Box>
         </SimpleGrid>

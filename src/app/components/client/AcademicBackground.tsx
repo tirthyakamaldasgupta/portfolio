@@ -18,24 +18,24 @@ export default function AcademicBackground() {
     }];
 
     return (<>
-            <SimpleGrid id="education-grid" columns={[1, 2]} spacing={1} padding={4}>
+        <SimpleGrid id="education-grid" columns={[1, 2]} spacing={1} padding={4}>
+            <Box>
+                <Heading size={"md"} color={"#000000"}>ACADEMIC BACKGROUND</Heading>
+            </Box>
+        </SimpleGrid>
+
+        {academicBackgrounds.map((academicBackground, index) => (
+            <SimpleGrid key={index} columns={[1, 2]} spacing={1} padding={4}>
                 <Box>
-                    <Heading size={"md"} color={"#000000"}>ACADEMIC BACKGROUND</Heading>
+                    <Heading
+                        size={"sm"}>{academicBackground.startingDate} - {academicBackground.endingDate}</Heading>
                 </Box>
-            </SimpleGrid>
 
-            {academicBackgrounds.map((academicBackground, index) => (
-                <SimpleGrid key={index} columns={[1, 2]} spacing={1} padding={4}>
-                    <Box>
-                        <Heading
-                            size={"sm"}>{academicBackground.startingDate} - {academicBackground.endingDate}</Heading>
-                    </Box>
-
-                    <Box>
-                        <Heading size={"sm"} color={"#000000"}
-                                 marginBottom={2}>{academicBackground.degree} degree, {academicBackground.domain}</Heading>
-                        <Heading size={"sm"}>{academicBackground.universityName}</Heading>
-                    </Box>
-                </SimpleGrid>))}
-        </>)
+                <Box>
+                    <Heading size={"sm"} color={"#000000"}
+                             marginBottom={2}>{academicBackground.degree} degree, {academicBackground.domain}</Heading>
+                    <Heading size={"sm"}>{academicBackground.universityName}</Heading>
+                </Box>
+            </SimpleGrid>))}
+    </>)
 }

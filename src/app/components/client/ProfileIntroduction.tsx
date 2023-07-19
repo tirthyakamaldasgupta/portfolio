@@ -17,12 +17,14 @@ export default function ProfileIntroduction() {
         </Box>
         <Box>
             <Text>
-                Back in 2014, I got super curious about flashing custom ROMs (firmware based on the Android source code provided by Google) in my Android mobile. Although I never
+                Back in 2014, I got super curious about flashing custom ROMs (firmware based on the Android source code
+                provided by Google) in my Android mobile. Although I never
                 got around to build one, however that&apos;s when I realized that my true passion lies in developing
                 applications.
                 <br/>
                 <br/>
-                Currently I am working as an <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#000000"}>Automation
+                Currently I am working as an <Text as={"span"} display={"inline"} fontWeight={"semibold"}
+                                                   color={"#000000"}>Automation
                 Engineer</Text> at <Text as={"span"} display={"inline"} fontWeight={"semibold"} color={"#000000"}>BAAR
                 Technologies</Text>, where I dive into the exciting world of <Text as={"span"} display={"inline"}
                                                                                    fontWeight={"semibold"}

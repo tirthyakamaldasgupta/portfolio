@@ -30,10 +30,10 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (<html lang="en">
-        <body className={roboto.className}>
-        <Providers>
-            {children}
-        </Providers>
-        </body>
-        </html>);
+    <body className={roboto.className}>
+    <Providers>
+        {children}
+    </Providers>
+    </body>
+    </html>);
 };

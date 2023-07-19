@@ -1,5 +1,5 @@
 import {Box, Button, Heading, Link, SimpleGrid, Tag, TagLabel, TagLeftIcon, Text} from "@chakra-ui/react";
-import {faArrowRight, faTag, faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRight, faTag} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Projects() {
@@ -57,7 +57,8 @@ export default function Projects() {
 
                     <Box marginTop={8}>
                         <Button as={Link} href={project.buttonLink} target={"_blank"}
-                                rel={"noopener noreferrer"} colorScheme="blackAlpha"><Text>{project.buttonText}</Text><FontAwesomeIcon
+                                rel={"noopener noreferrer"}
+                                colorScheme="blackAlpha"><Text>{project.buttonText}</Text><FontAwesomeIcon
                             icon={faArrowRight} style={{marginLeft: "5px"}}/></Button>
                     </Box>
                 </Box>))}
