@@ -33,7 +33,7 @@ export default function Navbar() {
             as="nav"
             alignItems="center"
             justifyContent="space-between"
-            backgroundColor={"#F5F5F5"}
+            backgroundColor={"#F6F1E9"}
             boxShadow="white"
             padding="2"
             position="fixed"
@@ -81,7 +81,7 @@ export default function Navbar() {
                     />
                     <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
                         <DrawerOverlay/>
-                        <DrawerContent backgroundColor={"#F5F5F5"}>
+                        <DrawerContent backgroundColor={"#F6F1E9"}>
                             <DrawerBody>
                                 {items.map((item) => (
                                     <Button
