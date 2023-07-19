@@ -1,8 +1,10 @@
 import {Box, Heading, SimpleGrid, Text} from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 
 export default function ProfileIntroduction() {
     return (<SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
         <Box>
+            <Image src="/tirthya-kamal-dasgupta.png" width={300} height={"auto"} marginBottom={5}/>
             <Heading size="3xl" color={"#03C988"} marginBottom={5}>
                 Hello! I&apos;m,
             </Heading>
@@ -15,7 +17,7 @@ export default function ProfileIntroduction() {
                                              color={"#000000"}>BAAR Technologies</Text>
             </Heading>
         </Box>
-        <Box>
+        <Box style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end" }} marginTop={2}>
             <Text>
                 Back in 2014, I got super curious about flashing custom ROMs (firmware based on the Android source code
                 provided by Google) in my Android mobile. Although I never
