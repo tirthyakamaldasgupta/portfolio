@@ -15,6 +15,7 @@ import {
 import {HamburgerIcon} from "@chakra-ui/icons";
 import {Bebas_Neue} from "next/font/google";
 import {Link as ScrollLink} from "react-scroll";
+import Link from "next/link";
 
 const bebasNeue = Bebas_Neue({
     weight: "400",
@@ -46,7 +47,7 @@ export default function Navbar() {
             maxWidth={{base: "95%", lg: "70%"}}
             mx="auto"
         >
-            <Heading fontSize={"lg"} fontWeight={"extrabold"} className={bebasNeue.className} color={"#e36435"}>
+            <Heading as={Link} href="/" fontSize={"lg"} fontWeight={"extrabold"} className={bebasNeue.className} color={"#e36435"} _hover={{ textDecoration: "none" }}>
                 TIRTHYA KAMAL DASGUPTA
             </Heading>
             {displayDesktop && (
