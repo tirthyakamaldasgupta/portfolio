@@ -11,7 +11,7 @@ export default function Blogs() {
         blogDescription: "To facilitate user queries on my portfolio site, which is currently being developed, I am offering two options for submitting inquiries: emailing me directly or filling out a simple form. To ensure the best user experience for the latter option, I have two constraints: Data Storage and Scalability. Explore the solution that involves developing a FastAPI server and deploying it on Vercel Serverless Functions, to efficiently store enquiry data in a Google Sheet and address the challenges at hand.",
         platforms: [{
             platformIcon: faMedium,
-            platformIconColor: "#ffffff",
+            platformIconColor: "#000000",
             link: "https://medium.com/@tirthyakamaldasgupta12/effortlessly-collect-enquiries-how-i-used-vercel-serverless-functions-and-fastapi-to-send-enquiry-ef3416a2662d"
         }, {
             platformIcon: faHashnode,
@@ -26,7 +26,7 @@ export default function Blogs() {
         blogDescription: "Continuously documenting your code base is important during the development process. If you seek to streamline documentation efforts and prioritize development, you can use the Mintlify Doc Writer extension to effortlessly generate high-quality documentation for your code directly within VS Code.",
         platforms: [{
             platformIcon: faMedium,
-            platformIconColor: "#ffffff",
+            platformIconColor: "#000000",
             link: "https://medium.com/@tirthyakamaldasgupta12/effortlessly-document-your-code-with-mintlify-doc-writer-1c6dc5b32a15"
         }, {
             platformIcon: faHashnode,
@@ -41,7 +41,7 @@ export default function Blogs() {
         blogDescription: "It is common for individuals to have a strong desire to swiftly implement a process or solution during its development, without first taking the time to visualize its flow. Discover how you can visualize the flow of your application using Mermaid, a tool that can be integrated into VS Code.",
         platforms: [{
             platformIcon: faMedium,
-            platformIconColor: "#ffffff",
+            platformIconColor: "#000000",
             link: "https://medium.com/@tirthyakamaldasgupta12/visualize-the-flow-of-your-application-right-within-vs-code-with-mermaid-55e234ba4be0"
         }],
         tags: ["VSCode", "Visualization", "Flowchart", "MermaidJS", "Productivity"]
@@ -52,7 +52,7 @@ export default function Blogs() {
         blogDescription: "See how I have developed a basic Python script designed to retrieve the current exchange rate of 1 Dogecoin in the user's local currency.",
         platforms: [{
             platformIcon: faMedium,
-            platformIconColor: "#ffffff",
+            platformIconColor: "#000000",
             link: "https://medium.com/@tirthyakamaldasgupta12/simple-python-script-to-fetch-the-equivalent-price-of-1-dogecoin-in-the-local-currency-5d88e09dcd46"
         }],
         tags: ["Python", "Web Scraping", "Dogecoin", "Automation", "Requests Library"]
@@ -61,14 +61,14 @@ export default function Blogs() {
     return (<>
         <SimpleGrid id="blogs-grid" columns={[1, 2]} spacing={1} padding={4}>
             <Box>
-                <Heading size="md" color="#ffffff">BLOGS</Heading>
+                <Heading size="md" color="#000000">BLOGS</Heading>
             </Box>
         </SimpleGrid>
 
         <SimpleGrid columns={1} spacing={1} padding={4}>
             <Box>
                 {blogs.map((blog, index) => (<Box key={index} marginBottom={8}>
-                    <Heading size="sm" color="#ffffff" marginBottom={2}>{blog.blogTitle}</Heading>
+                    <Heading size="sm" color="#000000" marginBottom={2}>{blog.blogTitle}</Heading>
                     <Heading size="sm" marginBottom={2}
                              fontWeight="normal">{blog.publishDate} | {blog.readTime}</Heading>
                     <Text marginY={5}>{blog.blogDescription}</Text>
@@ -76,7 +76,7 @@ export default function Blogs() {
                     {blog.platforms.map((platform, platformIndex) => (
                         <Button key={platformIndex} as={Link} href={platform.link} target={"_blank"}
                                 rel={"noopener noreferrer"} backgroundColor={"transparent"}
-                                textDecoration={"none"} _hover={{textDecoration: "none"}} color={"#ffffff"}
+                                textDecoration={"none"} _hover={{textDecoration: "none"}} color={"#000000"}
                                 rightIcon={<FontAwesomeIcon icon={faArrowRight}/>}
                                 leftIcon={<FontAwesomeIcon icon={platform.platformIcon}
                                                            color={platform.platformIconColor}/>}/>))}
