@@ -148,10 +148,13 @@ export default function Connect() {
                         setFormSubmitted(true);
                         setFormSubmissionError(false);
                         setFormSubmissionErrorMessage("");
+                    } else {
+                        setFormSubmitting(false);
+                        setFormSubmissionError(true);
+                        setFormSubmissionErrorMessage("I am sorry, but it looks like there was an error processing your request. I have been notified of the issue and I am working to resolve it as soon as possible. In the meantime, if you have any questions or need further assistance, please feel free to email me directly. Thank you for your patience and understanding.");
                     }
                 })
                 .catch(error => {
-                    console.log(error);
                     setFormSubmitting(false);
                     setFormSubmissionError(true);
                     setFormSubmissionErrorMessage("I am sorry, but it looks like there was an error processing your request. I have been notified of the issue and I am working to resolve it as soon as possible. In the meantime, if you have any questions or need further assistance, please feel free to email me directly. Thank you for your patience and understanding.");
