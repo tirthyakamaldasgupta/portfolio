@@ -81,7 +81,7 @@ export default function Connect() {
 
         setEmail(value);
 
-        setEmailError(value === "");
+        setEmailError(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value));
     };
 
     const handleCompanyNameChange = (e: {
