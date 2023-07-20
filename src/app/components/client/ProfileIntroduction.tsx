@@ -4,7 +4,7 @@ import { Image } from "@chakra-ui/react";
 export default function ProfileIntroduction() {
     return (<SimpleGrid columns={[1, 2]} spacing={1} padding={4}>
         <Box>
-            <Box
+            {/* <Box
                 borderRadius="full"
                 boxShadow="0 2px 4px rgba(0, 0, 0, 0.2)"
                 overflow="hidden"
@@ -19,8 +19,15 @@ export default function ProfileIntroduction() {
                     objectFit="cover"
                     alt="Tirthya Kamal Dasgupta"
                 />
-            </Box>
-            <Heading size="3xl" color={"#03C988"} marginBottom={5}>
+            </Box> */}
+            <Image
+                    src="/tirthya-kamal-dasgupta-graphic.png"
+                    width={"60%"}
+                    height={"auto"}
+                    objectFit="cover"
+                    alt="Tirthya Kamal Dasgupta"
+                />
+            <Heading size="3xl" color={"#03C988"} marginY={5}>
                 Hello! I&apos;m,
             </Heading>
             <Heading size="2xl" fontWeight={"semibold"} marginBottom={3} color={"#000000"}>
