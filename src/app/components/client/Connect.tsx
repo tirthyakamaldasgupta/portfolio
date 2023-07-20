@@ -42,10 +42,10 @@ export default function Connect() {
     const [companyName, setCompanyName] = useState("");
     const [message, setMessage] = useState("");
 
-    const [firstNameError, setFirstNameError] = useState(true);
-    const [lastNameError, setLastNameError] = useState(true);
-    const [emailError, setEmailError] = useState(true);
-    const [messageError, setMessageError] = useState(true);
+    const [firstNameError, setFirstNameError] = useState(false);
+    const [lastNameError, setLastNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [messageError, setMessageError] = useState(false);
 
     const [formError, setFormError] = useState(false);
 
