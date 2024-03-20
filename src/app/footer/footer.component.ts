@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  footerText: string = 'Copyright © 2023 Tirthya Kamal Dasgupta. All rights reserved.';
 }
