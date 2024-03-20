@@ -1,5 +1,13 @@
 <h4 class="page-heading">{{ pageHeading }}</h4>
 
+<br>
+
+<div class="float-end">
+  <button type="button" class="btn btn-secondary" (click)="downloadResume()">{{ resumeDownloaderButtonText }}</button>
+</div>
+
+<br>
+
 <ul class="timeline" *ngFor="let company of companies">
   <li>
     <h5>

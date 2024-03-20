@@ -32,6 +32,7 @@ interface Company {
 })
 export class ExperienceComponent {
   pageHeading: String = 'Experience';
+  resumeDownloaderButtonText: String = 'Download resume';
   companies: Company[] = [
     {
       name: 'BAAR Technologies',
@@ -90,4 +91,20 @@ export class ExperienceComponent {
       ],
     },
   ];
+
+  downloadResume = () => {
+    const fileUrl = '/assets/files/Tirthya-Kamal-Dasgupta-Resume.pdf';
+    const fileName = 'Tirthya-Kamal-Dasgupta-Resume.pdf';
+
+    const link = document.createElement('a');
+
+    link.href = fileUrl;
+    link.download = fileName;
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  };
 }
