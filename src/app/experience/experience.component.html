@@ -1,0 +1,27 @@
+<h4 class="page-heading">{{ pageHeading }}</h4>
+
+<ul class="timeline" *ngFor="let company of companies">
+  <li>
+    <h5>
+      <a class="company-details" target="_blank" href="{{ company.website }}">{{
+        company.name
+      }}</a>
+    </h5>
+    <h6>{{ company.mode }}, {{ company.duration }}</h6>
+    <ul class="timeline" *ngFor="let designation of company.designations">
+      <li>
+        <h5>{{ designation.designation }}</h5>
+        <h6>
+          {{ designation.startDate }} - {{ designation.endDate }},
+          {{ designation.duration }}
+        </h6>
+        <h6>{{ designation.location }}, {{ designation.model }}</h6>
+        <ul class="timeline">
+          <li *ngFor="let description of designation.descriptions">
+            <p>{{ description.description }}</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
